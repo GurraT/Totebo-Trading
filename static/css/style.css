@@ -1,17 +1,11 @@
 .brand-logo{
-    margin-left: 20px;
+    margin-left: 60px;
 }
 
 .login{
     margin-right: 80px;
 }
 
-/*.material-icons {
-  position: relative;
-  /* Adjust these values accordingly
-  top: 8px;
-  right: 40px;
-} */
 
 #main{
     height: 400px;
@@ -22,6 +16,7 @@
 }
 
 .rightpanel img{
+    margin-top: 40px;
     height: 400px;
     width: 400px;
 
