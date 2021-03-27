@@ -1,0 +1,28 @@
+.brand-logo{
+    margin-left: 20px;
+}
+
+.login{
+    margin-right: 80px;
+}
+
+/*.material-icons {
+  position: relative;
+  /* Adjust these values accordingly
+  top: 8px;
+  right: 40px;
+} */
+
+#main{
+    height: 400px;
+    margin-bottom: 60px;
+}
+.leftpanel{
+    margin-top: 40px;
+}
+
+.rightpanel img{
+    height: 400px;
+    width: 400px;
+
+}
