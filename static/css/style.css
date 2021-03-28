@@ -1,6 +1,6 @@
 
-
-.brand-logo{
+.logo{
+    font-size:28px;
     margin-left: 60px;
 }
 
@@ -8,18 +8,49 @@
     margin-right: 80px;
 }
 
+.heroimg{
+height: 420px;
+}
+
+.heroimg img{
+    height:100%;
+    width:100%;
+}
+
 
 #main{
-    height: 400px;
-    margin-bottom: 60px;
-}
-.leftpanel{
-    margin-top: 40px;
+    height:800px;
+    background-image: url("../img/pexels-junior-teixeira-2047905.jpg");
+    background-size: 600px 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
-.rightpanel img{
-    margin-top: 40px;
-    height: 400px;
-    width: 400px;
+
+.card{
+    border:#545760 2px solid;
+    opacity: 80%;
+}
+.leftpanel{
+    margin-top: 60px;
+}
+
+.rightpanel{
+    margin-top: 200px;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    
+.logo{
+    margin-left: 0px;
+
+}
+
+.login{
+    margin-right: 0px;
+}
 
 }

@@ -8,45 +8,57 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
         {% block styles %}
     {% endblock %}
-    <title>Totebo Trading Analysis</title>
+    <title>Totebo Tradelys
+    </title>
 </head>
 <body>
-  <header>
-  <nav class="nav-extended #3e2723 brown darken-4">
+  <header class="z-depth-5">
+  <nav class="nav-extended #000000 black">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><i class="fas fa-hand-holding-usd"></i>Totebo Trading Analysis</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" class="logo"><i class="fas fa-hand-holding-usd"></i>Totebo Tradelys</a>
       <ul id="nav-mobile" class="right">
         <li class="login"><a href="{{url_for('login')}}">Login <i class="fas fa-sign-in-alt"></i></a></li>
       </ul>
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab disabled"> <a href="{{url_for('omx')}}"> <i class="far fa-chart-bar"></i> OMX Stockholm 30</a></li>
+        <li class="tab disabled"> <a href="{{url_for('omx')}}"> <i class="far fa-chart-bar"></i> OMX-30</a></li>
         <li class="tab"><a class="active" href="{{url_for('stockmarket')}}"><i class="fas fa-university"></i> Stocks</a></li>
         <li class="tab"><a href="{{url_for('profile')}}"><i class="fas fa-user"></i> Profile</a></li>
         <li class="tab"><a href="{{url_for('toolbox')}}"><i class="fas fa-paste"></i> Toolbox</a></li>
       </ul>
     </div>
   </nav>
+  <div class = "heroimg s12 m12 l12">
+    <img src="static/img/pexels-ds-stories-7267492.jpg" alt="coin">
+  </div>
   </header>
-
-  <section id="main">
-      <div class="row">
-<div class="leftpanel col s12 m5 l5 offset-l1">
-<p>
-   Metamorfen var fulländad. Kina hade pånyttfötts och bredde nu ut sina praktfylla vingar över världen. Återigen hade landet intagit sin rättmätiga roll som världens ledare. I turbulens ifrån Kinas framfart satt USA och tittade på likt en senil tjurig gammal gubbe som försökte förnimma sig om när världen såg annorlunda ut. Visst hade väl även USA varit betydelsefullt en gång I tiden. Var de inte så att de var mexicanernas fel att tiden hade förändrats. Med lite gurgelvatten och en praktfull mur hade världen sett annorlunda ut. Kanske berodde tidens gång på att den stora massan inte sett till det större perspektivet. De hade låtit sig förföras av medias dräbbel om miljö och rättvisa. Sånt tjafs gynnar ingen. Nej vägar ska byggas, byråkrater ska gödas och olja ska smörja den rullande statsapparten. Eller hur var det.. Kanske var de det svagas fel, de sjuka utan jobb. Visst hade väl de satt sig upp mot den sanna amerikanen som gjorde rätt för sig. Hade inte de krävt en kommunistisk reform inom sjukvården och spottat på de som landet var byggt på.. Och all denna mediarapportering med nyheter som inte gynnade landet I helhet.. Hade folket bara förstått 
-</p>
-</div>
-<div class="rightpanel col s12 m5 l5">
-<img class="#e0e0e0 grey lighten-4" src="static/img/klipartz.com(16).png" alt="marketplace">
-
-</div>
-</div>
+  <section id="main" class="#000000 black">
+  <div class="row">
+    <div class="col s12 m6 leftpanel">
+      <div class="card #ffffff white z-depth-4">
+        <div class="card-content black-text">
+          <span class="card-title">Card Title</span>
+          <p>Metamorfen var fulländad. Kina hade pånyttfötts svagas fel, de sjuka utan jobb. Visst hade väl de satt sig upp mot den sanna amerikanen som gjorde rätt för sig. Hade inte de krävt en kommunistisk reform inom sjukvården och spottat på de som landet var byggt på.. Och all denna mediarapportering med nyheter som inte gynnade landet I helhet.. Hade folket bara förstått</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="rightpanel col s12 m6 offset-m6">
+      <div class="card #ffffff white z-depth-4">
+        <div class="card-content black-text">
+          <span class="card-title">Card Title</span>
+          <p>Metamorfen var fulländad. Kina hade pånyttfötts svagas fel, de sjuka utan jobb. Visst hade väl de satt sig upp mot den sanna amerikanen som gjorde rätt för sig. Hade inte de krävt en kommunistisk reform inom sjukvården och spottat på de som landet var byggt på.. Och all denna mediarapportering med nyheter som inte gynnade landet I helhet.. Hade folket bara förstått</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </section>
 
-          <footer class="page-footer #212121 grey darken-4">
+  
+          <footer class="page-footer #000000 black z-depth-5">
           <div class="container ">
             <div class="row">
               <div class="col l4 s12">
