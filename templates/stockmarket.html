@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stockmarket</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
    {% for task in tasks %}
         {{ task.Company_name}}<br>
         {{ task.Company_abbr}}<br>
@@ -14,8 +9,7 @@
         {{ task.Closening_Price}}<br>
         {{ task.Daily_High}}<br>
         {{ task.Daily_Low}}<br>
-        {{ task.Volume}}s
+        {{ task.Vol}}
    {% endfor %}
-    
-</body>
-</html>
+
+{% endblock %}
