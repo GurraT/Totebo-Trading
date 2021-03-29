@@ -8,29 +8,29 @@
     margin-right: 80px;
 }
 
-.heroimg{
-height: 420px;
-}
 
 .heroimg{
     height:300px;
     background-color: #010101;
     background-image: url("../img/pexels-junior-teixeira-2047905.jpg");
-    background-size: 300px 300px;
+    background-size: 400px 400px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 
 #main{
-    height:850px;
-    background-color:#08090d;
+    height:1000px;
+    background-image:url("../img/3d-rendered-background-with-matrix-style-design.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#main .row{
-    height:600px;
+.contentimg{
+    height:400px;
     background-image:url("../img/pexels-ds-stories-7267492.jpg");
-    background-size: cover;
+    background-size: 300px 300px;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -49,7 +49,7 @@ height: 420px;
 }
 
 .bottompanel{
-    margin-top: 280px;
+    margin-top: 0px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -62,6 +62,9 @@ height: 420px;
 
 .login{
     margin-right: 0px;
+}
+#main{
+height:1000px;
 }
 
 }
