@@ -20,20 +20,13 @@
 
 
 #main{
-    height:1000px;
+    height:700px;
     background-image:url("../img/3d-rendered-background-with-matrix-style-design.jpg");
-    background-size: cover;
+    background-size: 60% 60%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.contentimg{
-    height:400px;
-    background-image:url("../img/pexels-ds-stories-7267492.jpg");
-    background-size: 300px 300px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 
 .card{
@@ -65,6 +58,7 @@
 }
 #main{
 height:1000px;
+background-size: 100% 100%;
 }
 
 }
