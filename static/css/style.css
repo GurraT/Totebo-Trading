@@ -4,7 +4,9 @@ body{
 }
 
 header{
-    padding-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: #545760 5px solid;
+    border-top: #545760 5px solid;
 }
 
 .logo{
@@ -17,10 +19,7 @@ header{
 }
 
 .omx{
-    background-color: #f9fbe7
-    
-    ;
-    color: black;
+    background-color: #f9fbe7;
     text-shadow: 1px 1px #dcedc8;
     text-align: center;
     border:gray 2px solid;
@@ -61,6 +60,8 @@ header{
 .bottompanel{
     margin-top: 0px;
 }
+
+
 
 /*Register page*/
 
