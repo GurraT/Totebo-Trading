@@ -15,56 +15,33 @@
   <header class="z-depth-5">
   <nav class="nav-extended #000000 black">
     <div class="nav-wrapper">
-      <a href="#" class="logo"><i class="fas fa-hand-holding-usd"></i>Totebo Tradelys</a>
+      <a class="logo"><i class="fas fa-hand-holding-usd"></i>Totebo Tradelys</a>
       <ul id="nav-mobile" class="right">
-        <li class="register"><a href="{{url_for('register')}}"> <i class="fas fa-hand-point-left"></i></a></li>
+        <li class="register"><a href="{{url_for('register')}}">Register <i class="fas fa-hand-point-left"></i></a></li>
         <li class="login"><a href="{{url_for('login')}}">Login <i class="fas fa-sign-in-alt"></i></a></li>
       </ul>
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab disabled"> <a href="{{url_for('omx')}}"> <i class="far fa-chart-bar"></i> OMX-30</a></li>
-        <li class="tab"><a class="active" href="{{url_for('stockmarket')}}"><i class="fas fa-university"></i> Stocks</a></li>
-        <li class="tab"><a href="{{url_for('profile')}}"><i class="fas fa-user"></i> Profile</a></li>
-        <li class="tab"><a href="{{url_for('toolbox')}}"><i class="fas fa-paste"></i> Toolbox</a></li>
+        <li class="stock"><a href="{{url_for('stockmarket')}}"><i class="fas fa-university"></i> Stocks</a></li>
+        <li class="profile"><a href="{{url_for('profile')}}"><i class="fas fa-user"></i> Profile</a></li>
+        <li class="toolbox"><a href="{{url_for('toolbox')}}"><i class="fas fa-paste"></i> Toolbox</a></li>
       </ul>
     </div>
   </nav>
-  <div class = "heroimg s12 m12 l12">
+       <div class="row">
+       <div class= "col s4 m3 l2 offset-s1 offset-m1 offset-l1 omx"> <i class="far fa-chart-bar"></i> OMX-30</div>
   </div>
   </header>
-  <section id="main" class="#000000 black">
-  <div class="row">
-    <div class="col s12 m4 leftpanel offset-m1">
-      <div class="card #ffffff white z-depth-4">
-        <div class="card-content black-text">
-          <span class="card-title">Card Title</span>
-          <p>Metamorfen var fulländad. Kina hade pånyttfötts svagas fel, de sjuka utan jobb. Visst hade väl de satt sig upp mot den sanna amerikanen som gjorde rätt för sig. Hade inte de krävt en kommunistisk reform inom sjukvården och spottat på de som landet var byggt på.. Och all denna mediarapportering med nyheter som inte gynnade landet I helhet.. Hade folket bara förstått</p>
-        </div>
-      </div>
-    </div>
-    <div class="rightpanel col s12 m4 offset-m2">
-      <div class="card #ffffff white z-depth-4">
-        <div class="card-content black-text">
-          <span class="card-title">Card Title</span>
-          <p>Metamorfen var fulländad. Kina hade pånyttfötts svagas fel, de sjuka utan jobb. Visst hade väl de satt sig upp mot den sanna amerikanen som gjorde rätt för sig. Hade inte de krävt en kommunistisk reform inom sjukvården och spottat på de som landet var byggt på.. Och all denna mediarapportering med nyheter som inte gynnade landet I helhet.. Hade folket bara förstått</p>
-        </div>
-      </div>
-  </div>
-        <div class="bottompanel col s12  m4  offset-m4">
-      <div class="card #ffffff white z-depth-4">
-        <div class="card-content black-text">
-          <span class="card-title">Card Title</span>
-          <p>Metamorfen var fulländad. Kina hade pånyttfötts svagas fel, de sjuka utan jobb. Visst hade väl de satt sig upp mot den sanna amerikanen som gjorde rätt för sig. Hade inte de krävt en kommunistisk reform inom sjukvården och spottat på de som landet var byggt på.. Och all denna mediarapportering med nyheter som inte gynnade landet I helhet.. Hade folket bara förstått</p>
-        </div>
-      </div>
-    </div>
-  </div>
+      {% block header %}
+        {% endblock %}
+  <section>
 
   </section>
-
+    {% block content %}
+        {% endblock %}
   
-          <footer class="page-footer #000000 black z-depth-5">
+          <footer class="page-footer #000000 black">
           <div class="container ">
             <div class="row">
               <div class="col l4 s12">
@@ -76,7 +53,7 @@
                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div>
               <div class="col l3 offset-l1 s12">
-                <h5 class="white-text" href="#!"><i class="fas fa-user"></i> Profile page</h5>
+                <h5 class="white-text" href="#!"><i class="fas fa-hands-helping"></i> Register</h5>
                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div>
             </div>
@@ -91,8 +68,7 @@
             </div>
           </div>
         </footer>
-
-        {% block content %}
+    {% block footer %}
         {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     {% block scripts %}

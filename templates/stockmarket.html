@@ -1,15 +1,17 @@
 {% extends "base.html" %}
+{% block header %}
+{% endblock %}
 {% block content %}
 
-   {% for task in tasks %}
-        {{ task.Company_name}}<br>
-        {{ task.Company_abbr}}<br>
-        {{ task.Date}}<br>
-        {{ task.Opening_Price}}<br>
-        {{ task.Closening_Price}}<br>
-        {{ task.Daily_High}}<br>
-        {{ task.Daily_Low}}<br>
-        {{ task.Vol}}
+   {% for stockinfo in stockinfo %}
+        {{ stockinfo.Company_name}}<br>
+        {{ stockinfo.Company_abbr}}<br>
+        {{ stockinfo.Date}}<br>
+        {{ stockinfo.Opening_price}}<br>
+        {{ stockinfo.Closing_price}}<br>
+        {{ stockinfo.Daily_High}}<br>
+        {{ stockinfo.Daily_Low}}<br>
+        {{ stockinfo.Vol}}
    {% endfor %}
 
 {% endblock %}
