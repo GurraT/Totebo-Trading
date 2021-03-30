@@ -1,31 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="row #000000 black">
-        <form class="col s12  m8  offset-m2">
-      <div class="card-panel">
+  <div class="row #000000 black registerpage">
+        <form class="registerform col s10 m8 offset-s1 offset-m2 #dcedc8 light-green lighten-4" methods="POST" action="{{ url_for('register') }}">
+      <div class="card-panel #f9fbe7 lime lighten-5">
+          <!-- Title-->
+          <h5 class="card-title"><i class="fas fa-door-open"></i> Registration</h5>
        <div class="row">
+           <!-- UserName-->
         <div class="input-field col s6">
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix"><i class="fas fa-user"></i> First Name</label>
+          <input id="username" name="username" type="text" class="validate">
+          <label for="username"><i class="fas fa-user"></i> User Name</label>
         </div>
+        <!-- Telephone number-->
         <div class="input-field col s6">
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone"><i class="fas fa-mobile-alt"></i> Telephone</label>
+          <input id="telephone" name="telephone" type="tel" class="validate">
+          <label for="telephone"><i class="fas fa-mobile-alt"></i> Telephone</label>
         </div>
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
+            <!-- Email-->
+          <input id="email" name="email" type="email" class="validate">
           <label for="email"><i class="fas fa-envelope"></i> Email</label>
           <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
         </div>
+        <!-- Password-->
               <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="password" type="password" class="validate">
+          <input id="password" name="password" type="password" class="validate">
           <label for="password"><i class="fas fa-unlock-alt"></i> Password</label>
         </div>
       </div>
+      <!-- Submit Form-->
                       <div class="row">
-                    <button type="submit" class="col s4 offset-s4 btn-large light-blue darken-4 text-shadow">
+                    <button type="submit" class="col s4 offset-s4 btn-large #33691e light-green darken-4 text-shadow">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>

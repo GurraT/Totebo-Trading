@@ -14,7 +14,6 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-
 mongo = PyMongo(app)
 
 
@@ -25,9 +24,31 @@ def get_stockinfo():
     return render_template("stockmarket.html",stockinfo=stockinfo)
 
 
-@app.route("/register")
+@app.route("/register", methods=["GET","POST"])
 def register():
+    if request.method == "POST":
+        # check if user already exists in DB
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash('User already exists in the system')
+            return redirect(url_for("register"))
+
+        credential = {
+            "username": request.form.get("username").lower(),
+            "telephone": request.form.get("telephone"),
+            "email": request.form.get("email"),
+            "password": generate_password_hash(request.form.get("password"))
+        } 
+        mongo.db.users.insert_one(credential)
+
+        # put the user into a session cokie
+        session["user"] = request.form.get("username").lower()
+        flash('Welcome your request have been received !')
+
     return render_template("register.html")
+
 
 @app.route("/login")
 def login():

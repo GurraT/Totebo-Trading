@@ -1,3 +1,4 @@
+/* Basetemplate */
 body{
  background-color: black;   
 }
@@ -16,9 +17,11 @@ header{
 }
 
 .omx{
-    background-color: lightblue;
+    background-color: #f9fbe7
+    
+    ;
     color: black;
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 1px #dcedc8;
     text-align: center;
     border:gray 2px solid;
 }
@@ -57,6 +60,20 @@ header{
 
 .bottompanel{
     margin-top: 0px;
+}
+
+/*Register page*/
+
+.registerpage{
+    background-image:url("../img/pexels-manuel-geissinger-325229.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.registerform{
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 @media screen and (max-width: 1000px) {
