@@ -9,12 +9,12 @@
        <div class="row">
            <!-- UserName-->
         <div class="input-field col s6">
-          <input id="username" name="username" type="text" class="validate">
+          <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]${5,15}" class="validate" required>
           <label for="username"><i class="fas fa-user"></i> User Name</label>
         </div>
         <!-- Telephone number-->
         <div class="input-field col s6">
-          <input id="telephone" name="telephone" type="tel" class="validate">
+          <input id="telephone" name="telephone" type="tel" class="validate" minlength="5" maxlength="15" pattern="[0-9]+{5,15}" required>
           <label for="telephone"><i class="fas fa-mobile-alt"></i> Telephone</label>
         </div>
         <div class="input-field col s12">
@@ -26,7 +26,7 @@
         <!-- Password-->
               <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="password" name="password" type="password" class="validate">
+          <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="[a-zA-Z0-9]${5,15}" class="validate" required>
           <label for="password"><i class="fas fa-unlock-alt"></i> Password</label>
         </div>
       </div>

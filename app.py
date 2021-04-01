@@ -32,7 +32,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash('User already exists in the system')
+            flash("User already exists in the system")
             return redirect(url_for("register"))
 
         register = {
@@ -45,7 +45,7 @@ def register():
 
         # put the user into a session cokie
         session["user"] = request.form.get("username").lower()
-        flash('Welcome your request have been received !')
+        flash("Welcome your request have been received !")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")

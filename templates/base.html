@@ -13,7 +13,8 @@
 </head>
 <body>
   <header class="z-depth-5">
-  <nav class="nav-extended #000000 black">
+      <div class="header #000000 black">
+  <nav class="nav-extended N/A transparent">
     <div class="nav-wrapper">
       <a class="logo"><i class="fas fa-hand-holding-usd"></i>Tecbo Tradelys</a>
       <ul id="nav-mobile" class="right">
@@ -29,14 +30,21 @@
       </ul>
     </div>
   </nav>
-       <div class="row">
+       <div class="row N/A transparent">
        <div class= "col s4 m3 l2 offset-s1 offset-m1 offset-l1 omx"> <i class="far fa-chart-bar"></i> OMX-30</div>
+  </div>
   </div>
   </header>
       {% block header %}
         {% endblock %}
   <section class="white-text">
-
+      {% with messages = get_flashed_messages()  %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="s4 offset-s4"> {{ messages }} </div>
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
   </section>
     {% block content %}
         {% endblock %}
