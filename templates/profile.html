@@ -1,4 +1,27 @@
 {% extends "base.html" %}
 
-{ % block content %}
-{ % endblock % }
+{% block content %}
+
+  <div class="row #000000 black profilepage">
+    <div class="col s4 offset-s4">
+        {% if session.user %}
+          {% with messages = get_flashed_messages()  %}
+            {% if messages %}
+                    {% for message in messages %}
+                        <h5 class="#1b5e20 green darken-4 center-align white-text z-depth-4"> <i class="fas fa-user-tie"></i>  {{ message }} </h5>
+                    {% endfor %} 
+            {% endif %}
+          {% endwith %}
+        {% endif %}
+    </div>
+
+        <div class="col s4 offset-s4">
+
+        </div>
+
+        <div class="col s4 offset-s4">
+            
+        </div>
+    
+    </div>
+{% endblock %}

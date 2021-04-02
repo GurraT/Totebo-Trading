@@ -37,18 +37,12 @@
   </header>
       {% block header %}
         {% endblock %}
-  <section class="white-text">
-      {% with messages = get_flashed_messages()  %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="s4 offset-s4"> {{ messages }} </div>
-            {% endfor %}
-        {% endif %}
-      {% endwith %}
+
+  <section>
   </section>
-    {% block content %}
-        {% endblock %}
-  
+        {% block content %}
+         {% endblock %}
+    
           <footer class="page-footer #000000 black">
           <div class="container ">
             <div class="row">

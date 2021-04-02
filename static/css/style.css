@@ -64,8 +64,17 @@ header{
 }
 
 
-
 /*Register page*/
+
+.linktext{
+    color:#cccbda;
+    text-shadow: #010101 1px 1px;
+}
+
+.linktext a{
+    color:#c1be5f;
+}
+
 
 .registerpage{
     background-image:url("../img/pexels-manuel-geissinger-325229.jpg");
@@ -78,6 +87,17 @@ header{
     margin-top: 40px;
     margin-bottom: 40px;
 }
+
+/*Profile page*/
+
+.profilepage{
+    height:800px;
+    background-image:url("../img/3d-rendered-background-with-matrix-style-design.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 @media screen and (max-width: 1000px) {
 

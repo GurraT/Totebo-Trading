@@ -1,11 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+
   <div class="row #000000 black registerpage">
+        <div class="col s8 offset-s2 ">
+            <h5 class="center-align linktext"> Already Member ??  <i class="fas fa-hand-point-right"></i> <a href="{{url_for('login')}}">  Login here  </a> <i class="fas fa-hand-point-left"></i></h5>
+        </div>
         <form class="registerform col s10 m8 offset-s1 offset-m2 #dcedc8 light-green lighten-4" method="POST" action="{{ url_for('register') }}">
       <div class="card-panel #f9fbe7 lime lighten-5">
           <!-- Title-->
           <h5 class="card-title"><i class="fas fa-door-open"></i> Registration</h5>
+
+
+        {% if session.user %}
+          {% with messages = get_flashed_messages()  %}
+            {% if messages %}
+                    {% for message in messages %}
+                        <h5 class="#b71c1c red darken-4 center-align white-text z-depth-4"> <i class="fas fa-user-slash"></i> {{ message }} </h5>
+                    {% endfor %} 
+            {% endif %}
+          {% endwith %}
+        {% endif %}
+    
+
        <div class="row">
            <!-- UserName-->
         <div class="input-field col s6">
@@ -26,8 +44,8 @@
         <!-- Password-->
               <div class="row">
         <div class="input-field col s10 offset-s1">
-          <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="[a-zA-Z0-9]${5,15}" class="validate" required>
-          <label for="password"><i class="fas fa-unlock-alt"></i> Password</label>
+          <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="(?=.*[!@#$%^&*(),.?:{}|>])(?=.*[a-z])(?=.*[A-Z]).{5,15}" class="validate" required>
+          <label for="password"><i class="fas fa-unlock-alt"></i> Password (include uppercase letter, lower case letter, special character)</label>
         </div>
       </div>
       <!-- Submit Form-->
@@ -40,4 +58,4 @@
       </div>
     </form>
     </div>
-        {% endblock %}
+{% endblock %}
