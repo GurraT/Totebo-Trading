@@ -3,7 +3,7 @@
 {% block content %}
 
   <div class="row #000000 black profilepage">
-    <div class="col s4 offset-s4">
+    <div class="col s6 offset-s3">
         {% if session.user %}
           {% with messages = get_flashed_messages()  %}
             {% if messages %}
@@ -14,14 +14,105 @@
           {% endwith %}
         {% endif %}
     </div>
-
-        <div class="col s4 offset-s4">
-
-        </div>
-
-        <div class="col s4 offset-s4">
-            
-        </div>
     
+        <form class="registerform col s10 m5 offset-m1 offset-s1 offset-m1 #dcedc8 light-green lighten-4" method="POST" action="{{ url_for('register') }}">
+      <div class="card-panel #f9fbe7 lime lighten-5">
+      <div class="row">
+          <h5>Userinformation</h5>
+        <div class="input-field col s6">
+          <h6>Name: </h6>
+          <input id="name" name="name" type="text">
+        </div>
+        </div>
+             <div class="row">
+        <div class="input-field col s6">
+          <h6 class=>Email: </h6>
+        <input id="Email" name="Email" type="email">
+        </div>
+        </div>
+                     <div class="row">
+        <div class="input-field col s6">
+          <h6>Phone: </h6>
+          <input id="phone" name="phone" type="tel">
+        </div>
+        </div>
+              <table>
+<h5>Preference for Technical analysis</h5>
+
+        <tbody>
+          <tr>
+            <td>  
+<div class="switch">
+    <h6>RSI</h6>
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+</td>
+<td>
+    <div class="switch">
+    <h6>MACD</h6>
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+</td>
+<td>
+    <div class="switch">
+    <h6>Trend</h6>
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+</td>
+</tr>
+ <tr>
+            <td>  
+<div class="switch">
+    <h6>EMA</h6>
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+</td>
+<td>
+    <div class="switch">
+    <h6>Bollinger</h6>
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+</td>
+<td>
+    <div class="switch">
+    <h6>SMA</h6>
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+</td>
+</tr>
+        </tbody>
+      </table>
+</div>
+    </form>
     </div>
 {% endblock %}
