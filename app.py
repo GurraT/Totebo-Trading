@@ -23,6 +23,12 @@ def get_stockinfo():
     stockinfo = list(mongo.db.stockinfo.find())
     return render_template("stockmarket.html", stockinfo=stockinfo)
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    stockinfo = list(mongo.db.stockinfo.find({"$text": {"$search":query}}))
+    return render_template("stockmarket.html", stockinfo=stockinfo)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
