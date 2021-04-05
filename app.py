@@ -99,16 +99,20 @@ def profile(username):
    
     if session["user"]:
         return render_template("profile.html", username=username)
-        
-        if request.method == "POST":
-            RSI = "include" if request.form.get("RSI") else "exclude"
-            MACD = "include" if request.form.get("MACD") else "exclude"
-            Trend = "include" if request.form.get("Trend") else "exclude"
-            EMA = "include" if request.form.get("EMA") else "exclude"
-            Bollinger = "include" if request.form.get("Bollinger") else "exclude"
-            SMA = "include" if request.form.get("SMA") else "exclude"
-            info_phone = "include" if request.form.get("info_phone") else "exclude"
-            info_mail = "include" if request.form.get("info_mail") else "exclude"
+    
+    return redirect(url_for("login"))
+
+@app.route("/preference", methods=["GET", "POST"])
+def preference():
+    if request.method == "POST":
+            RSI = "on" if request.form.get("RSI") else "off"
+            MACD = "on" if request.form.get("MACD") else "off"
+            Trend = "on" if request.form.get("Trend") else "off"
+            EMA = "on" if request.form.get("EMA") else "off"
+            Bollinger = "on" if request.form.get("Bollinger") else "off"
+            SMA = "on" if request.form.get("SMA") else "off"
+            info_phone = "on" if request.form.get("info_phone") else "off"
+            info_mail = "on" if request.form.get("info_mail") else "off"
             preference = {
                 "name": request.form.get("name"),
                 "Email": request.form.get("Email"),
@@ -123,20 +127,27 @@ def profile(username):
                 "info_mail": info_mail
             }
             mongo.db.categories.insert_one(preference)
-            return redirect(url_for("toolbox"))
-    
-
-    return redirect(url_for("login"))
+            session["name"] = request.form.get("name").lower()            
+            return redirect(url_for("toolbox", name=session["name"]))
 
 @app.route("/logout")
 def logout():
     flash("You have been logout")
     session.pop("user")
+    session.pop("name")
     return redirect(url_for("login"))
 
-@app.route("/toolbox")
-def toolbox():
-    return render_template("toolbox.html")
+
+
+@app.route("/toolbox/<name>", methods=["GET", "POST"])
+def toolbox(name):
+    name = mongo.db.categories.find({"name": session["name"]})
+    preference = mongo.db.categories.find()
+      
+    if session["name"]:
+        return render_template("toolbox.html", name=name)
+    
+    return render_template("profile.html")
 
 
 if __name__ == "__main__":

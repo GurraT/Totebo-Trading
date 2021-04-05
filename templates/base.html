@@ -33,7 +33,7 @@
         {% endif %}
         <li class="stock"><a href="{{url_for('get_stockinfo')}}"><i class="fas fa-university"></i> Stocks</a></li>
         {% if session.user %}
-        <li class="toolbox"><a href="{{url_for('toolbox')}}"><i class="fas fa-paste"></i> Toolbox</a></li>
+        <li class="toolbox"><a href="{{url_for('toolbox', name=session['name'])}}"><i class="fas fa-paste"></i> Toolbox</a></li>
         {% endif %}
         <li class="omx"><i class="far fa-chart-bar"></i>  OMX-30 </li>
       </ul>

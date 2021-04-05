@@ -1,4 +1,43 @@
 {% extends "base.html" %}
 
-{ % block content %}
-{ % endblock % }
+{% block content %}
+
+  <div class="row #000000 black profilepage">
+    <div class="col s6 offset-s3">
+    </div>
+    
+    <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{ url_for('search') }}"> 
+          <!-- List with technical indicator choosen for building a stockportfolio -->
+         {% for name in name %}
+         <h5 class="center-align"> Welcome {{name.name}}! </h5>
+         <h6 class="center-align"> <br> Below you find the technical environment you choosed to work with when selecting your stock portfolio</h6>
+         <br> 
+         <table>
+        <thead>
+          <tr>
+              {% if name.RSI == "on" %}
+              <th class="center-align">RSI</th>
+              {% endif %}
+            {% if name.MACD == "on" %}
+              <th class="center-align">MACD </th>
+              {% endif %}
+            {% if name.EMA == "on" %}
+              <th class="center-align">EMA</th>
+              {% endif %}
+            {% if name.Trend== "on" %}
+              <th class="center-align">Trend</th>
+              {% endif %}
+            {% if name.Bollinger== "on" %}
+              <th class="center-align">Bollinger</th>
+              {% endif %}
+             {% if name.SMA == "on" %}
+              <th class="center-align">SMA</th>
+              {% endif %}
+      </tr>
+        </thead>
+      </table> 
+      {% endfor %}
+    </form>
+    </div>
+{% endblock %}   
+   
