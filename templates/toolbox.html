@@ -8,35 +8,49 @@
     
     <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{ url_for('search') }}"> 
           <!-- List with technical indicator choosen for building a stockportfolio -->
-         {% for name in name %}
-         <h5 class="center-align"> Welcome {{name.name}}! </h5>
-         <h6 class="center-align"> <br> Below you find the technical environment you choosed to work with when selecting your stock portfolio</h6>
-         <br> 
-         <table>
-        <thead>
-          <tr>
+         
+          {% if not session.name %}
+      <!-- Link to Login page-->
+        <div class="col s8 offset-s2 ">
+            <h5 class="center-align linktext"> Already a Member ??  <i class="fas fa-hand-point-right"></i> <a href="{{url_for('login')}}">  Login here  </a> <i class="fas fa-hand-point-left"></i></h5>
+        </div>
+          {% endif %}
+      <div class="s6-offset-s3">
+          <h5 class="center-align"> Dear {{session.user}}, <br> </h5>
+      {% for info in stockinfo %}
+         <h6 class="center-align"> "{{ info.Company_name }}" opened at {{ info.Opening_price}}$ and closed at {{info.Closing_price}}$ during {{info.Date}} </h6>
+      {% endfor %}
+      <br>
+      <h6 class="center-align"> Our ambition is to build a platform which offers analysis based on your interest in <br> technical analysis and your preference for </h6>
+      <br>         
+      {% for name in name %} 
+       <table>
+        <div class="row">
+            <div class="col s4 offset-s4 selection">
               {% if name.RSI == "on" %}
-              <th class="center-align">RSI</th>
+              <p class="col">RSI</p>
               {% endif %}
             {% if name.MACD == "on" %}
-              <th class="center-align">MACD </th>
+              <p class="col">MACD </p>
               {% endif %}
             {% if name.EMA == "on" %}
-              <th class="center-align">EMA</th>
+              <p class="col">EMA</p>
               {% endif %}
             {% if name.Trend== "on" %}
-              <th class="center-align">Trend</th>
+              <p class="col">Trend</p>
               {% endif %}
             {% if name.Bollinger== "on" %}
-              <th class="center-align">Bollinger</th>
+              <p class="col">Bollinger</p>
               {% endif %}
              {% if name.SMA == "on" %}
-              <th class="center-align">SMA</th>
+              <p class="col">SMA</p>
               {% endif %}
-      </tr>
-        </thead>
+        </div>
+        </div>
       </table> 
       {% endfor %}
+        <h6 class="center-align"> Togheter we will make it happen but until then please press the buttom below to get a copy of this letter sent to your choice of option </h6>
+      </div>
     </form>
     </div>
 {% endblock %}   

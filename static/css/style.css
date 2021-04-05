@@ -136,6 +136,11 @@ header{
     font-size: 48px;
 }
 
+/*Toolbox page*/
+.selection{
+   border: black 3px solid; 
+}
+
 @media screen and (max-width: 1000px) {
 
     .buttom-large{

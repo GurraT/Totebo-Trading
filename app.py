@@ -142,10 +142,10 @@ def logout():
 @app.route("/toolbox/<name>", methods=["GET", "POST"])
 def toolbox(name):
     name = mongo.db.categories.find({"name": session["name"]})
-    preference = mongo.db.categories.find()
+    stockinfo = list(mongo.db.stockinfo.find())
       
     if session["name"]:
-        return render_template("toolbox.html", name=name)
+        return render_template("toolbox.html", name=name, stockinfo=stockinfo)
     
     return render_template("profile.html")
 
