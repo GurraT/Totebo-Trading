@@ -127,6 +127,10 @@ header{
 
 }
 
+.send_info{
+     margin-bottom: 60px; 
+}
+
 /*Stockmarket page*/
 .nomatch{
     font-size: 48px;

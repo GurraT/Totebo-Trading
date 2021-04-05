@@ -5,7 +5,7 @@
 
   <div class="row #000000 black registerpage">
         <div class="col s8 offset-s2 ">
-            <h5 class="center-align linktext"> Already Member ??  <i class="fas fa-hand-point-right"></i> <a href="{{url_for('login')}}">  Login here  </a> <i class="fas fa-hand-point-left"></i></h5>
+            <h5 class="center-align linktext"> Already a Member ??  <i class="fas fa-hand-point-right"></i> <a href="{{url_for('login')}}">  Login here  </a> <i class="fas fa-hand-point-left"></i></h5>
         </div>
         <form class="registerform col s10 m8 offset-s1 offset-m2 #dcedc8 light-green lighten-4" method="POST" action="{{ url_for('register') }}">
       <div class="card-panel #f9fbe7 lime lighten-5">
@@ -13,7 +13,7 @@
           <h5 class="card-title"><i class="fas fa-door-open"></i> Registration</h5>
 
 
-        {% if session.user %}
+        {% if not session.user %}
           {% with messages = get_flashed_messages()  %}
             {% if messages %}
                     {% for message in messages %}

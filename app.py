@@ -96,10 +96,36 @@ def omx():
 def profile(username):
     #select session user's username from db
     username = mongo.db.users.find_one({"username": session["user"]})["username"]
-
+   
     if session["user"]:
         return render_template("profile.html", username=username)
+        
+        if request.method == "POST":
+            RSI = "include" if request.form.get("RSI") else "exclude"
+            MACD = "include" if request.form.get("MACD") else "exclude"
+            Trend = "include" if request.form.get("Trend") else "exclude"
+            EMA = "include" if request.form.get("EMA") else "exclude"
+            Bollinger = "include" if request.form.get("Bollinger") else "exclude"
+            SMA = "include" if request.form.get("SMA") else "exclude"
+            info_phone = "include" if request.form.get("info_phone") else "exclude"
+            info_mail = "include" if request.form.get("info_mail") else "exclude"
+            preference = {
+                "name": request.form.get("name"),
+                "Email": request.form.get("Email"),
+                "phone": request.form.get("phone"),
+                "RSI": RSI,
+                "MACD": MACD,
+                "Trend": Trend,
+                "EMA": EMA,
+                "Bollinger": Bollinger,
+                "SMA": SMA,
+                "info_phone": info_phone,
+                "info_mail": info_mail
+            }
+            mongo.db.categories.insert_one(preference)
+            return redirect(url_for("toolbox"))
     
+
     return redirect(url_for("login"))
 
 @app.route("/logout")

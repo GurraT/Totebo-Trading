@@ -15,11 +15,11 @@
         {% endif %}
     </div>
     
-    <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{ url_for('register') }}">
+    <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{ url_for('toolbox') }}">
         <div class="profilewrapping"> 
         <div class="col s10 offset-s1 m4 offset-m1">
-      <div class="row">
-          <h5 >Userinformation</h5>
+            <div class="row">
+          <h5>Userinformation</h5>
         <div class="input-field col s6">
           <h6>Name: </h6>
           <input id="name" name="name" type="text">
@@ -47,9 +47,9 @@
             <td>  
 <div class="switch">
     <h6>RSI</h6>
-    <label>
+    <label for="RSI">
       Off
-      <input type="checkbox">
+      <input type="checkbox" id="RSI" name="RSI">
       <span class="lever"></span>
       On
     </label>
@@ -58,9 +58,9 @@
 <td>
     <div class="switch">
     <h6>MACD</h6>
-    <label>
+    <label for="MACD">
       Off
-      <input type="checkbox">
+      <input type="checkbox" id="MACD" name="MACD">
       <span class="lever"></span>
       On
     </label>
@@ -69,9 +69,9 @@
 <td>
     <div class="switch">
     <h6>Trend</h6>
-    <label>
+    <label for="Trend">
       Off
-      <input type="checkbox">
+      <input type="checkbox" id="Trend" name="Trend">
       <span class="lever"></span>
       On
     </label>
@@ -79,12 +79,12 @@
 </td>
 </tr>
  <tr>
-            <td>  
+            <td>
 <div class="switch">
     <h6>EMA</h6>
-    <label>
+    <label for="EMA">
       Off
-      <input type="checkbox">
+      <input type="checkbox" id="EMA" name="EMA">
       <span class="lever"></span>
       On
     </label>
@@ -93,9 +93,9 @@
 <td>
     <div class="switch">
     <h6>Bollinger</h6>
-    <label>
+    <label for="Bollinger">
       Off
-      <input type="checkbox">
+      <input type="checkbox" id="Bollinger" name="Bollinger">
       <span class="lever"></span>
       On
     </label>
@@ -104,9 +104,9 @@
 <td>
     <div class="switch">
     <h6>SMA</h6>
-    <label>
+    <label for="SMA">
       Off
-      <input type="checkbox">
+      <input type="checkbox" id="SMA" name="SMA">
       <span class="lever"></span>
       On
     </label>
@@ -125,9 +125,9 @@
             <td>  
 <div class="switch">
     <h6>Email</h6>
-    <label>
+    <label for="info_mail">
       Off
-      <input type="checkbox">
+      <input type="checkbox" name="info_mail" id="info_mail">
       <span class="lever"></span>
       On
     </label>
@@ -136,9 +136,9 @@
 <td>
     <div class="switch">
     <h6>Telephone</h6>
-    <label>
+    <label for="info_phone">
       Off
-      <input type="checkbox">
+      <input type="checkbox" name="info_phone" id="info_phone">
       <span class="lever"></span>
       On
     </label>
@@ -147,6 +147,9 @@
 </tr>
         </tbody>
             </table>
+                    <div class="col send_info s10 center-align">
+            <button type="submit" class="btn text-shadow #212121 grey darken-4"> <i class="fas fa-cog"></i> Update Information </button>
+        </div>
         </div>
         </div> 
     </form>
