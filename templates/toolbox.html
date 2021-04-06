@@ -5,10 +5,8 @@
   <div class="row #000000 black profilepage">
     <div class="col s6 offset-s3">
     </div>
-    
-    <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{ url_for('search') }}"> 
-          <!-- List with technical indicator choosen for building a stockportfolio -->
-         
+    <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action=""> 
+          <!-- List with technical indicator choosen for building a stockportfolio -->  
           {% if not session.name %}
       <!-- Link to Login page-->
         <div class="col s8 offset-s2 ">
@@ -48,9 +46,10 @@
         </div>
         </div>
       </table> 
-      {% endfor %}
-        <h6 class="center-align"> Togheter we will make it happen but until then please press the buttom below to get a copy of this letter sent to your choice of option </h6>
-      </div>
+        <h6 class="center-align"> Togheter we will make it happen !!! <br> Do not miss the chance to expirence our next realise with an engine that take your trading to the next level! </h6>
+    <br>  
+    </div>
+        {% endfor %}
     </form>
     </div>
 {% endblock %}   

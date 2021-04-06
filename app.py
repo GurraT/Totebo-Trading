@@ -129,12 +129,14 @@ def preference():
             mongo.db.categories.insert_one(preference)
             session["name"] = request.form.get("name").lower()            
             return redirect(url_for("toolbox", name=session["name"]))
+    
+    return render_template("profile.html", username=username)
+
 
 @app.route("/logout")
 def logout():
     flash("You have been logout")
     session.pop("user")
-    session.pop("name")
     return redirect(url_for("login"))
 
 

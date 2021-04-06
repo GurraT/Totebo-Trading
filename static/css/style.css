@@ -27,16 +27,6 @@ header{
     margin-left: 60px;
 }
 
-.omx{
-    height: 60%;
-    width: 120px;
-    margin-left: 30px;
-    color: #010101;
-    background-color: #f9fbe7;
-    text-shadow: 1px 1px #dcedc8;
-    text-align: center;
-    border:gray 2px solid;
-}
 
 .heroimg{
     height:300px;
