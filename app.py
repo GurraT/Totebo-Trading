@@ -87,10 +87,6 @@ def login():
 
     return render_template("login.html")
 
-@app.route("/omx")
-def omx():
-    return render_template("omx.html")
-
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -150,6 +146,10 @@ def toolbox(name):
         return render_template("toolbox.html", name=name, stockinfo=stockinfo)
     
     return render_template("profile.html")
+
+@app.route("/add_info")
+def add_stock():
+    return render_template("add_stock.html")
 
 
 if __name__ == "__main__":

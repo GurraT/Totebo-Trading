@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+  <div class="row #000000 black registerpage">
+        <form class="registerform col s10 m8 offset-s1 offset-m2 #dcedc8 light-green lighten-4" method="POST" action="{{ url_for('register') }}">
+      <div class="card-panel #f9fbe7 lime lighten-5">
+          <!-- Title-->
+          <h5 class="card-title center-align"><i class="fas fa-coins"></i> Add Stockinformation</h5>
+
+
+        {% if not session.user %}
+          {% with messages = get_flashed_messages()  %}
+            {% if messages %}
+                    {% for message in messages %}
+                        <h5 class="#b71c1c red darken-4 center-align white-text z-depth-4"> <i class="fas fa-user-slash"></i> {{ message }} </h5>
+                    {% endfor %} 
+            {% endif %}
+          {% endwith %}
+        {% endif %}
+    
+
+       <div class="row">
+           <!-- Company name-->
+        <div class="input-field col s12">
+          <input id="company_name" name="company_name" type="text" minlength="2" maxlength="15" pattern="[a-zA-Z0-9&]{2,15}" class="validate" required>
+          <label for="company_name"><i class="fas fa-laptop-house"></i> Company Name</label>
+        </div>
+            <!-- Company name abbreviation-->
+        <div class="input-field col s8 offset-s2">
+          <input id="company_abbr" name="company_abbr" type="text" minlength="2" maxlength="15" pattern="[a-zA-Z0-9&]{2,15}" class="validate" required>
+          <label for="company_abbr"><i class="fas fa-signature"></i> Abbreviation</label>
+        </div>
+        <!-- opening price-->
+        <div class="input-field col s6">
+          <input id="price_open" name="price_open" type="text" minlength="1" maxlength="15" pattern="[0-9.]{1,15}" class="validate" required>
+          <label for="price_open"><i class="fas fa-money-bill-wave-alt"></i> Opening price</label>
+        </div>
+                <!-- closening price-->
+        <div class="input-field col s6">
+          <input id="price_close" name="price_close" type="text" minlength="1" maxlength="15" pattern="[0-9.]{1,15}" class="validate" required>
+          <label for="price_close"> Closening price <i class="fas fa-money-bill-wave-alt"></i></label>
+        </div>
+                    <!-- daily high price-->
+        <div class="input-field col s6">
+          <input id="price_high" name="price_high" type="text" minlength="1" maxlength="15" pattern="[0-9.]{1,15}" class="validate" required>
+          <label for="price_high"><i class="fas fa-arrow-alt-circle-up"></i> Daily High</label>
+        </div>
+                            <!-- daily low price-->
+        <div class="input-field col s6">
+          <input id="price_low" name="price_low" type="text" minlength="1" maxlength="15" pattern="[0-9.]{1,15}" class="validate" required>
+          <label for="price_low"><i class="fas fa-arrow-alt-circle-down"></i> Daily Low</label>
+        </div>
+                                  <!-- stock volume-->
+        <div class="input-field col s8 offset-s2">
+          <input id="volume" name="volume" type="text" minlength="1" maxlength="15" pattern="[0-9.]{1,15}" class="validate" required>
+          <label for="volume"><i class="fas fa-chart-bar"></i> Stock Volume</label>
+        </div>
+                                 <!-- Date -->
+        <div class="input-field col s12">
+          <input type="text" class="datepicker" id="date" name="date" required>
+          <label for="Date"> <i class="fas fa-calendar-alt"></i> Date </label>
+        </div>
+    
+      <!-- Submit Form-->
+                      <div class="row">
+                    <button type="submit" class="col s4 offset-s4 btn-large #33691e light-green darken-4 text-shadow">
+                        Send Information 
+                    </button>
+                </div>
+      </div>
+      </div>
+    </form>
+    </div>
+{% endblock %}
