@@ -42,7 +42,7 @@
               <td class="center-align">{{ stockinfo.Date}}</td>
               <td class="center-align">{{ stockinfo.Opening_price}}</td>
               <td class="center-align">{{ stockinfo.Closing_price}}</td>
-              <td class="center-align"> <a href="{{url_for('get_stockinfo')}}" class="btn-small #3e2723 brown darken-4 text-shadow"><i class="fas fa-cog"></i> Edit</a> 
+              <td class="center-align"> <a href="{{url_for('edit_stock', stockid=stockinfo._id)}}" class="btn-small #3e2723 brown darken-4 text-shadow"><i class="fas fa-cog"></i> Edit</a> 
                 <a href="{{url_for('get_stockinfo')}}" class="btn-small #b71c1c red darken-4 text-shadow"> <i class="fas fa-trash-alt"></i> Delete</a> </td>
           </tr>
         </tbody>

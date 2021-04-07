@@ -145,8 +145,16 @@ def add_stock():
             }
         mongo.db.stockinfo.insert_one(info)
         redirect(url_for("get_stockinfo"))
-    
+
     return render_template("add_stock.html")
+
+
+@app.route("/edit_stock/<stockid>", methods=["GET", "POST"])
+def edit_stock(stockid):
+    stockid = mongo.db.stockinfo.find({"_id":ObjectId(stockid)})
+    
+    stockinfo = mongo.db.stockinfo.find_one()
+    return render_template("edit_stock.html", stockid=stockid, stockinfo = stockinfo)
 
 @app.route("/logout")
 def logout():
