@@ -131,20 +131,20 @@ def preference():
 
 @app.route("/add_info", methods=["GET", "POST"])
 def add_stock():
-   if request.method == "POST": 
-       # insert info to stockinfo collection in db 
-       info = {
-           "Company_name": request.form.get("company_name"),
-           "Company_abbr": request.form.get("company_abbr"),
-           "Date": request.form.get("date"),
-           "Vol": request.form.get("volume"),
-           "Opening_price": request.form.get("price_open"),
-           "Closing_price": request.form.get("price_close"),
-           "Daily_High": request.form.get("price_high"),
-           "Daily_Low": request.form.get("price_low")
-       }
-       mongo.db.stockinfo.insert_one(info)
-       return redirect(url_for("get_stockinfo"))
+    if request.method == "POST":
+        # insert info to stockinfo collection in db 
+        info = {
+            "Company_name": request.form.get("company_name"),
+            "Company_abbr": request.form.get("company_abbr"),
+            "Date": request.form.get("date"),
+            "Vol": request.form.get("volume"),
+            "Opening_price": request.form.get("price_open"),
+            "Closing_price": request.form.get("price_close"),
+            "Daily_High": request.form.get("price_high"),
+            "Daily_Low": request.form.get("price_low"),
+            }
+        mongo.db.stockinfo.insert_one(info)
+        redirect(url_for("get_stockinfo"))
     
     return render_template("add_stock.html")
 

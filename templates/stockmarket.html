@@ -19,7 +19,7 @@
     </div>
         </div>
         </div>
-              <div class="col s6 offset-s3 l4 offset-l4">
+              <div class="col s12 center-align">
             <a href="{{url_for('get_stockinfo')}}" class="btn #b71c1c red darken-4 text-shadow">Reset</a>
             <button type="submit" class="btn text-shadow #33691e light-green darken-4">Search</button>
         </div>
@@ -31,7 +31,7 @@
               <th class="center-align">Date</th>
               <th class="center-align">Open</th>
               <th class="center-align">Close</th>
-              <th class="center-align">Volume</th>
+              <th class="center-align"></th>
           </tr>
         </thead>
 {% if stockinfo|length > 0 %}
@@ -42,7 +42,8 @@
               <td class="center-align">{{ stockinfo.Date}}</td>
               <td class="center-align">{{ stockinfo.Opening_price}}</td>
               <td class="center-align">{{ stockinfo.Closing_price}}</td>
-              <td class="center-align">{{ stockinfo.Vol}}</td>
+              <td class="center-align"> <a href="{{url_for('get_stockinfo')}}" class="btn-small #3e2723 brown darken-4 text-shadow"><i class="fas fa-cog"></i> Edit</a> 
+                <a href="{{url_for('get_stockinfo')}}" class="btn-small #b71c1c red darken-4 text-shadow"> <i class="fas fa-trash-alt"></i> Delete</a> </td>
           </tr>
         </tbody>
            {% endfor %}
