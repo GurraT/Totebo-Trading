@@ -151,10 +151,24 @@ def add_stock():
 
 @app.route("/edit_stock/<stockid>", methods=["GET", "POST"])
 def edit_stock(stockid):
-    stockid = mongo.db.stockinfo.find({"_id":ObjectId(stockid)})
+    if request.method == "POST":
+        # insert info to stockinfo collection in db 
+        info = {
+            "Company_name": request.form.get("company_name"),
+            "Company_abbr": request.form.get("company_abbr"),
+            "Date": request.form.get("date"),
+            "Vol": request.form.get("volume"),
+            "Opening_price": request.form.get("price_open"),
+            "Closing_price": request.form.get("price_close"),
+            "Daily_High": request.form.get("price_high"),
+            "Daily_Low": request.form.get("price_low"),
+            }
+        mongo.db.stockinfo.update({"_id": ObjectId(stockid)}, info)
+        flash("Information updated!")
     
+    stockid = mongo.db.stockinfo.find({"_id": ObjectId(stockid)})
     stockinfo = mongo.db.stockinfo.find_one()
-    return render_template("edit_stock.html", stockid=stockid, stockinfo = stockinfo)
+    return render_template("edit_stock.html", stockid=stockid, stockinfo=stockinfo)
 
 @app.route("/logout")
 def logout():
