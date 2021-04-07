@@ -101,6 +101,7 @@ def profile(username):
 @app.route("/preference", methods=["GET", "POST"])
 def preference():
     if request.method == "POST":
+        #insert user preferences in to category collection in db
             RSI = "on" if request.form.get("RSI") else "off"
             MACD = "on" if request.form.get("MACD") else "off"
             Trend = "on" if request.form.get("Trend") else "off"
@@ -128,6 +129,24 @@ def preference():
     
     return render_template("profile.html", username=username)
 
+@app.route("/add_info", methods=["GET", "POST"])
+def add_stock():
+   if request.method == "POST": 
+       # insert info to stockinfo collection in db 
+       info = {
+           "Company_name": request.form.get("company_name"),
+           "Company_abbr": request.form.get("company_abbr"),
+           "Date": request.form.get("date"),
+           "Vol": request.form.get("volume"),
+           "Opening_price": request.form.get("price_open"),
+           "Closing_price": request.form.get("price_close"),
+           "Daily_High": request.form.get("price_high"),
+           "Daily_Low": request.form.get("price_low")
+       }
+       mongo.db.stockinfo.insert_one(info)
+       return redirect(url_for("get_stockinfo"))
+    
+    return render_template("add_stock.html")
 
 @app.route("/logout")
 def logout():
@@ -146,10 +165,6 @@ def toolbox(name):
         return render_template("toolbox.html", name=name, stockinfo=stockinfo)
     
     return render_template("profile.html")
-
-@app.route("/add_info")
-def add_stock():
-    return render_template("add_stock.html")
 
 
 if __name__ == "__main__":
