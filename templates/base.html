@@ -57,7 +57,7 @@
                 >
               </li>
               {% endif %} {% if not session.user %}
-              <li><i class="fas fa-hand-point-right"></i></li>
+              <li class="exclsmall"><i class="fas fa-hand-point-right"></i></li>
               {% endif %}
               <li class="stock">
                 <a href="{{url_for('get_stockinfo')}}"
@@ -71,7 +71,7 @@
                 >
               </li>
               {% endif %} {% if not session.user %}
-              <li><i class="fas fa-hand-point-left"></i></li>
+              <li class="exclsmall"><i class="fas fa-hand-point-left"></i></li>
               {% endif %} {% if session.user %}
               <li class="toolbox">
                 <a href="{{url_for('toolbox', name=session['name'])}}"

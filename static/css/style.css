@@ -166,10 +166,13 @@ body{
    
    @media screen and (max-width: 1000px) {
    
-       .buttom-large{
-           display:none;
-       }
-       
+    .buttom-large{
+        display:none;
+    }
+    
+    .exclsmall{
+        display:none;
+    }
    
    .login{
        margin-right: 0px;
