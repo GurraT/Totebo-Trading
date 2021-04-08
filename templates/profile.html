@@ -17,31 +17,30 @@
     
     <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{ url_for('preference') }}">
         <div class="profilewrapping"> 
-        <div class="col s10 offset-s1 m4 offset-m1">
+        <div class="col s10 offset-s1 l5 offset-l1">
             <div class="row">
           <h5>Userinformation</h5>
         <div class="input-field col s6">
-          <input id="name" name="name" type="text">
-          <label for="name">Name: </label>
+          <input class="white-text text-shadow" value="{{ username }}" id="name" name="name" type="text"  disabled>
+          <label class="white-text text-shadow" for="name">Name: </label>
         </div>
         </div>
              <div class="row">
         <div class="input-field col s6">
-        <input id="Email" name="Email" type="email">
-        <label for="Email">Email: </label>
+        <input class="white-text text-shadow" value="{{ email }}" id="Email" name="Email" type="text"  disabled>
+        <label  class="white-text text-shadow" for="Email">Email: </label>
         </div>
         </div>
                      <div class="row">
         <div class="input-field col s6">
-          <input id="phone" name="phone" type="tel">
-            <label for="phone">Phone#: </label>
+          <input class="white-text text-shadow" value="{{ phone }}" id="phone" name="phone" type="tel"  disabled>
+            <label class="white-text text-shadow" for="phone">Phone#: </label>
         </div>
         </div>
         </div>
-            <div class="col s10 offset-s1 m3 offset-m1">
-            <table>
-<h5>Preference for Technical analysis</h5>
-
+            <div class="col s10 offset-s1 l3 offset-l1">
+            <table class="center-align">
+              <h5> Technical analysis</h5>
         <tbody>
           <tr>
             <td>  

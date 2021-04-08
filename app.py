@@ -92,9 +92,11 @@ def login():
 def profile(username):
     #select session user's username from db
     username = mongo.db.users.find_one({"username": session["user"]})["username"]
-   
+    email = mongo.db.users.find_one({"username": session["user"]})["email"]
+    phone = mongo.db.users.find_one({"username": session["user"]})["telephone"]
+
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, email=email, phone=phone)
     
     return redirect(url_for("login"))
 
@@ -165,11 +167,21 @@ def edit_stock(stockid):
         }
         mongo.db.stockinfo.update({"_id":ObjectId(stockid)},info)
         flash("Information updated!")
+        return redirect(url_for("get_stockinfo"))
         
     stockid = mongo.db.stockinfo.find_one({"_id":ObjectId(stockid)})
     return render_template("edit_stock.html", stockid=stockid)
 
+@app.route("/delete_stock/<stockid>", methods=["GET", "POST"])
+def delete_stock(stockid):
+    # delete info from stockinfo collection in db 
+    mongo.db.stockinfo.remove({"_id":ObjectId(stockid)})
+    flash("Information removed!")
+    return redirect(url_for("get_stockinfo"))
+
+
 @app.route("/logout")
+# logout and remove session cookies 
 def logout():
     flash("You have been logout")
     session.pop("user")
