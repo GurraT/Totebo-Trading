@@ -178,6 +178,10 @@ body{
    height:1000px;
    background-size: 100% 100%;
    }
+
+    .nav-content ul{
+        margin-left: 10px;
+    }
    
    .linktext{
        font-size: 18px;
