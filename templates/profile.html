@@ -8,8 +8,8 @@
           {% with messages = get_flashed_messages()  %}
             {% if messages %}
                     {% for message in messages %}
-                        <h5 class="#1b5e20 green darken-4 center-align white-text z-depth-4"> <i class="fas fa-user-tie"></i>  {{ message }} </h5>
-                    {% endfor %} 
+                        <h5 class="profilemessage text-shadow #212121 grey darken-4 center-align white-text z-depth-4"> <i class="fas fa-user-tie"></i>  {{ message }} </h5>
+                        {% endfor %} 
             {% endif %}
           {% endwith %}
         {% endif %}
@@ -21,7 +21,7 @@
             <div class="row">
           <h5>Userinformation</h5>
         <div class="input-field col s6">
-          <input class="white-text text-shadow" value="{{ username }}" id="name" name="name" type="text"  disabled>
+          <input class="white-text text-shadow" value="{{ username }}" id="name" name="name" type="text">
           <label class="white-text text-shadow" for="name">Name: </label>
         </div>
         </div>

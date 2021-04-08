@@ -1,62 +1,99 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
+<div class="row #000000 black registerpage">
+  <!-- Link to Login page-->
+  <div class="col s8 offset-s2">
+    <h5 class="center-align linktext">
+      Already a Member ?? <i class="fas fa-hand-point-right"></i>
+      <a href="{{url_for('login')}}"> Login here </a>
+      <i class="fas fa-hand-point-left"></i>
+    </h5>
+  </div>
+  <form
+    class="registerform col s10 m8 offset-s1 offset-m2 #dcedc8 light-green lighten-4"
+    method="POST"
+    action="{{ url_for('register') }}"
+  >
+    <div class="card-panel #f9fbe7 lime lighten-5">
+      <!-- Title-->
+      <h5 class="card-title"><i class="fas fa-door-open"></i> Registration</h5>
 
+      {% if not session.user %} {% with messages = get_flashed_messages() %} {%
+      if messages %} {% for message in messages %}
+      <h5 class="#b71c1c red darken-4 center-align white-text z-depth-4">
+        <i class="fas fa-user-slash"></i> {{ message }}
+      </h5>
+      {% endfor %} {% endif %} {% endwith %} {% endif %}
 
-  <div class="row #000000 black registerpage">
-      <!-- Link to Login page-->
-        <div class="col s8 offset-s2 ">
-            <h5 class="center-align linktext"> Already a Member ??  <i class="fas fa-hand-point-right"></i> <a href="{{url_for('login')}}">  Login here  </a> <i class="fas fa-hand-point-left"></i></h5>
-        </div>
-        <form class="registerform col s10 m8 offset-s1 offset-m2 #dcedc8 light-green lighten-4" method="POST" action="{{ url_for('register') }}">
-      <div class="card-panel #f9fbe7 lime lighten-5">
-          <!-- Title-->
-          <h5 class="card-title"><i class="fas fa-door-open"></i> Registration</h5>
-
-
-        {% if not session.user %}
-          {% with messages = get_flashed_messages()  %}
-            {% if messages %}
-                    {% for message in messages %}
-                        <h5 class="#b71c1c red darken-4 center-align white-text z-depth-4"> <i class="fas fa-user-slash"></i> {{ message }} </h5>
-                    {% endfor %} 
-            {% endif %}
-          {% endwith %}
-        {% endif %}
-    
-
-       <div class="row">
-           <!-- UserName-->
+      <div class="row">
+        <!-- UserName-->
         <div class="input-field col s6">
-          <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]${5,15}" class="validate" required>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            minlength="5"
+            maxlength="15"
+            pattern="^[a-zA-Z0-9]${5,15}"
+            class="validate"
+            required
+          />
           <label for="username"><i class="fas fa-user"></i> User Name</label>
         </div>
         <!-- Telephone number-->
         <div class="input-field col s6">
-          <input id="telephone" name="telephone" type="tel" class="validate" minlength="5" maxlength="15" pattern="[0-9]+{5,15}" required>
-          <label for="telephone"><i class="fas fa-mobile-alt"></i> Telephone</label>
+          <input
+            id="telephone"
+            name="telephone"
+            type="tel"
+            class="validate"
+            minlength="5"
+            maxlength="15"
+            pattern="[0-9]+{5,15}"
+            required
+          />
+          <label for="telephone"
+            ><i class="fas fa-mobile-alt"></i> Telephone</label
+          >
         </div>
         <div class="input-field col s12">
-            <!-- Email-->
-          <input id="email" name="email" type="email" class="validate">
+          <!-- Email-->
+          <input id="email" name="email" type="email" class="validate" />
           <label for="email"><i class="fas fa-envelope"></i> Email</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+          <span class="helper-text" data-error="wrong" data-success="right"
+            >Helper text</span
+          >
         </div>
         <!-- Password-->
-              <div class="row">
-        <div class="input-field col s10 offset-s1">
-          <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="(?=.*[!@#$%^&*(),.?:{}|>])(?=.*[a-z])(?=.*[A-Z]).{5,15}" class="validate" required>
-          <label for="password"><i class="fas fa-unlock-alt"></i> Password (include uppercase letter, lower case letter, special character)</label>
+        <div class="row">
+          <div class="input-field col s10 offset-s1">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              minlength="5"
+              maxlength="15"
+              pattern="(?=.*[!@#$%^&*(),.?:{}|>])(?=.*[a-z])(?=.*[A-Z]).{5,15}"
+              class="validate"
+              required
+            />
+            <label for="password"
+              ><i class="fas fa-unlock-alt"></i> Password (upper/lowercase
+              letter/special character)</label
+            >
+          </div>
+        </div>
+        <!-- Submit Form-->
+        <div class="row">
+          <button
+            type="submit"
+            class="col s4 offset-s4 btn-large #33691e light-green darken-4 text-shadow"
+          >
+            Register <i class="fas fa-sign-in-alt"></i>
+          </button>
         </div>
       </div>
-      <!-- Submit Form-->
-                      <div class="row">
-                    <button type="submit" class="col s4 offset-s4 btn-large #33691e light-green darken-4 text-shadow">
-                        Register <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
-      </div>
-      </div>
-    </form>
     </div>
+  </form>
+</div>
 {% endblock %}
