@@ -15,28 +15,25 @@
         {% endif %}
     </div>
     
-    <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{ url_for('preference') }}">
-        <div class="profilewrapping">
-          <div class="col s8 offset-s2 center-align">
-          <h5> In this section you set up your trading strategy and give information how you want your tailormade report to be delivered </h5>
-        </div> 
-          <div class="col s10 offset-s1 l5 offset-l1">
+    <form class="profileform col s10 offset-s1 #263238 blue-grey darken-4 white-text" method="POST" action="{{url_for('edit_preferences', id=id._id)}}">
+        <div class="profilewrapping"> 
+        <div class="col s10 offset-s1 l5 offset-l1">
             <div class="row">
           <h5>Userinformation</h5>
         <div class="input-field col s6">
-          <input class="white-text text-shadow" value="{{ username }}" id="name" name="name" type="text" >
+          <input class="white-text text-shadow" value="{{ id.name }}" id="name" name="name" type="text">
           <label class="white-text text-shadow" for="name">Name: </label>
         </div>
         </div>
              <div class="row">
         <div class="input-field col s6">
-        <input class="white-text text-shadow" value="{{ email }}" id="Email" name="Email" type="text"  >
+        <input class="white-text text-shadow" value="{{ id.Email }}" id="Email" name="Email" type="text">
         <label  class="white-text text-shadow" for="Email">Email: </label>
         </div>
         </div>
                      <div class="row">
         <div class="input-field col s6">
-          <input class="white-text text-shadow" value="{{ phone }}" id="phone" name="phone" type="tel"  >
+          <input class="white-text text-shadow" value="{{ id.phone }}" id="phone" name="phone" type="tel">
             <label class="white-text text-shadow" for="phone">Phone#: </label>
         </div>
         </div>
