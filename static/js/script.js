@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $(".dropdown-trigger").dropdown();
     $('.datepicker').datepicker({
                format: "dd mmmm, yyyy",
         yearRange: 3,
