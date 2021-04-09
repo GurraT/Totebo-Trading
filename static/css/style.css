@@ -7,6 +7,10 @@ body{
        padding-bottom: 10px;
    }
    
+   .hamburger{
+       margin-top: 5px;
+       margin-right: 100px;
+   }
    
    .logo{
        font-size:28px;
