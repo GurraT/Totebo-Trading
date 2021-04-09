@@ -195,5 +195,29 @@ _______________
     app.run(os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
 ________________________________
 
-- To avoid that sensitive information was revailed the env.py was then stored in the gitignore file
-- Next step was to  
+- To avoid that sensitive informations was revealed the env.py was then stored in the gitignore file
+- To be able to use python code code to communicate with the MongoDB pymongo package was needed to installed, this was done writing "pip3 install flask-pymongo" in the gitpod terminal 
+- Additionally following code was inserted to the app.py file
+_______
+    from flask_pymongo import PyMongo
+    mongo = PyMongo(app)
+___________________
+### To be able to push and connected the GitHub repository to Heroku following step was conducted
+- A requirement.txt file for running app.py was set up, writing following statement in the gitpod terminal "pip3 freeze --local > requirements.txt"
+- After setting up the requirement file a Procfile was constructing telling Heroku that app.py was used as the main file for running the website, this was done via running following command in the gitpod terminal "echo web: python app.py > Procfile"
+### To be able to connect the MongoDB Atlas to Heroku following step was conducted
+- In the Heroku "Setting" the same information as in the env.py was set up
+_____________________________
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", “<password>”>
+    os.environ.setdefault("MONGO_URI", "mongodb+srv://root:<mongopassword>@cluster0.k22xz.mongodb.net/totebo?retryWrites=true&w=majority")
+    os.environ.setdefault("MONGO_DBNAME", "totebo")
+    ___________________________________
+
+#### Deploying code through Heroku was conducted through
+- First pushing code to github, wrtiting "git add -A", "git commit -m "messages" ", "git push" in the gitpod terminal
+- To connected the Github repository to Heroku, the deploy menu of the totebo app in Heroku was selected
+- Within the deployment menu the icon "connect to GitHUb" was selected followed by selecting the repository "totebo trading" and than chosing "main bransch" and select connect, follow by deploy bransch
+- To see if deployment work the icn view was pressed
+
