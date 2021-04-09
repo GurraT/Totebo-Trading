@@ -58,30 +58,31 @@
             <th class="center-align">Date</th>
             <th class="center-align">Open</th>
             <th class="center-align">Close</th>
-            <th class="center-align"></th>
           </tr>
         </thead>
         {% if stockinfo|length > 0 %} {% for stockinfo in stockinfo %}
         <tbody>
           <tr>
-            <td class="center-align">{{ stockinfo.Company_name}}</td>
-            <td class="center-align">{{ stockinfo.Date}}</td>
-            <td class="center-align">{{ stockinfo.Opening_price}}</td>
-            <td class="center-align">{{ stockinfo.Closing_price}}</td>
-            <td class="center-align">
+            <td class="center-align">{{ stockinfo.Company_name}} <br><br><br><br> </td>
+            <td class="center-align">{{ stockinfo.Date}} <br><br><br><br> </td>
+            <td class="center-align">{{ stockinfo.Opening_price}} <br><br><br><br> </td>
+            <td class="center-align">{{ stockinfo.Closing_price}}  <br><br> 
+              {% if session.user %}
               <a
-                href="{{url_for('edit_stock', stockid=stockinfo._id)}}"
-                class="btn-small #3e2723 brown darken-4 text-shadow"
-                ><i class="fas fa-cog"></i> Edit</a
-              >
-              <a
-                href="{{url_for('delete_stock', stockid=stockinfo._id)}}"
-                class="btn-small #b71c1c red darken-4 text-shadow"
-              >
-                <i class="fas fa-trash-alt"></i> Delete</a
-              >
-            </td>
-          </tr>
+              href="{{url_for('edit_stock', stockid=stockinfo._id)}}"
+              class="btn-small #3e2723 brown darken-4 text-shadow"
+              ><i class="fas fa-cog"></i> Edit</a
+            >
+            <a
+              href="{{url_for('delete_stock', stockid=stockinfo._id)}}"
+              class="btn-small #b71c1c red darken-4 text-shadow"
+            >
+              <i class="fas fa-trash-alt"></i> Delete</a
+            >
+            {% else %}
+            <br><br> 
+            {% endif %}
+          </td>
         </tbody>
         {% endfor %} {% else %}
         <div class="row">
