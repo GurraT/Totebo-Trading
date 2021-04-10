@@ -150,6 +150,11 @@ body{
    
    @media screen and (max-width: 1000px) {
    
+    .logo{
+        font-size:18px;
+        margin-left: 60px;
+    }
+    
     .buttom-large{
         display:none;
     }

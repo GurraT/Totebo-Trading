@@ -24,7 +24,7 @@
             <div class="row">
           <h5>Userinformation</h5>
         <div class="input-field col s6">
-          <input class="white-text text-shadow" value="{{ username }}" id="name" name="name" type="text" >
+          <input class="white-text text-shadow" value="{{ username }}" pattern="[a-zA-Z0-9]{5,15}" id="name" name="name" type="text" >
           <label class="white-text text-shadow" for="name">Name: </label>
         </div>
         </div>
@@ -36,7 +36,7 @@
         </div>
                      <div class="row">
         <div class="input-field col s6">
-          <input class="white-text text-shadow" value="{{ phone }}" id="phone" name="phone" type="tel"  >
+          <input class="white-text text-shadow" value="{{ phone }}" pattern="[0-9]{5,15}" id="phone" name="phone" type="tel"  >
             <label class="white-text text-shadow" for="phone">Phone#: </label>
         </div>
         </div>

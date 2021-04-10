@@ -100,13 +100,13 @@ materializecss components such as dropdown-picker and datepicker for calender fu
 - Git
   - Git was used for version control by utilising the Gitpod terminal to commit to Git and push to GitHub.
 - GitHub
-  - Used to store and host the project files and source code after being pushed from Git.
+  - Used to store and host the project files after being pushed from Git.
 - Gitpod
   - An online IDE linked to the GitHub repository used for the majority of the code development.
 - [MongoDB Atlas]( https://www.mongodb.com/cloud/atlas)
   - Used as a database for storing, reading, extracting and editing data
 -[Heroku]( https://www.heroku.com/)
- - Used as a server for connecting MongoDB with G
+ - Used as a server for connecting MongoDB with Github and sourcing web pages
 - Font-Awesome
   - Used for icons to enhance headings and add emphasis to text.
 - Microsoft PowerPoint
@@ -127,8 +127,6 @@ materializecss components such as dropdown-picker and datepicker for calender fu
    - Used for formatting/beatify css-code
 -  [prettifyjs]( https://www.prettifyjs.net/)
    - Used for formatting/beatify javscript-code
-
-
 - JsHint.com
     - Used for validating javascript code
 ---
@@ -221,6 +219,12 @@ _____________________________
 - Within the deployment menu the icon "connect to GitHUb" was selected followed by selecting the repository "totebo trading" and than chosing "main bransch" and select "connect", follow by deploy bransch
 - To see if the deployment work the icon "view" was pressed
 
+## Testing
+
+- I conducted manual testing and used Lighthouse, google inspection tool, W3C validator(Html/CSS), JsHint (javascript)and PEP8 online checker(python) for automated validation see results below
+
+### Manual testing
+- [Protocol/Manual testing](assets/Documentation/manualtesting.pdf "Manual Testing")
 
 
 -----------
