@@ -109,12 +109,12 @@
                 > Profile</a
               >
             </li>
+            {% endif %} 
             <li class="stock">
               <a href="{{url_for('get_stockinfo')}}"
                 > Stocks</a
               >
             </li>
-            {% endif %} 
             {% if session.user %}
             <li class="add_stock">
               <a href="{{url_for('add_stock')}}"

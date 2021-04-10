@@ -9,7 +9,7 @@ body{
    
    .hamburger{
        margin-top: 5px;
-       margin-right: 100px;
+       margin-right: 10px;
    }
    
    .logo{
@@ -28,27 +28,7 @@ body{
    .omxwrap{
        margin-left: 60px;
    }
-   
-   
-   .heroimg{
-       height:300px;
-       background-color: #010101;
-       background-image: url("../img/pexels-junior-teixeira-2047905.jpg");
-       background-size: 400px 400px;
-       background-position: center;
-       background-repeat: no-repeat;
-   }
-   
-   
-   #main{
-       height:700px;
-       background-image:url("../img/3d-rendered-background-with-matrix-style-design.jpg");
-       background-size: 60% 60%;
-       background-position: center;
-       background-repeat: no-repeat;
-   }
-   
-   
+    
    
    .card{
        border:#545760 2px solid;
@@ -173,17 +153,9 @@ body{
     .buttom-large{
         display:none;
     }
-    
-    .exclsmall{
-        display:none;
-    }
    
    .login{
        margin-right: 0px;
-   }
-   #main{
-   height:1000px;
-   background-size: 100% 100%;
    }
 
     .nav-content ul{
