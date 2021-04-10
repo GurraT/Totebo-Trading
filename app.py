@@ -210,37 +210,13 @@ def toolbox(username):
 
     return render_template("profile.html")
 
-@app.route("/edit_preferences/<id>", methods=["GET", "POST"])
-def edit_preferences(id):
-    id = mongo.db.categories.find({"_id": ObjectId(id)})
-    if request.method == "POST":
-        # update user preferences in to category collection in db
-        RSI = "on" if request.form.get("RSI") else "off"
-        MACD = "on" if request.form.get("MACD") else "off"
-        Trend = "on" if request.form.get("Trend") else "off"
-        EMA = "on" if request.form.get("EMA") else "off"
-        Bollinger = "on" if request.form.get("Bollinger") else "off"
-        SMA = "on" if request.form.get("SMA") else "off"
-        info_phone = "on" if request.form.get("info_phone") else "off"
-        info_mail = "on" if request.form.get("info_mail") else "off"
-        preferences = {
-            "name": request.form.get("name"),
-            "Email": request.form.get("Email"),
-            "phone": request.form.get("phone"),
-            "RSI": RSI,
-            "MACD": MACD,
-            "Trend": Trend,
-            "EMA": EMA,
-            "Bollinger": Bollinger,
-            "SMA": SMA,
-            "info_phone": info_phone,
-            "info_mail": info_mail,
-        }
-        mongo.db.categories.update({"_id": ObjectId(id)}, preferences)
-        flash("Your preferences has been updated")
-        return redirect(url_for("toolbox", username=session["user"]))
+@app.route("/delete_preferences/<task>", methods=["GET", "POST"])
+def delete_preferences(task):
+    # delete preferences in categories collection in db
+    mongo.db.categories.remove({"_id": ObjectId(task)})
+    flash("Preferences removed!")
+    return redirect(url_for("toolbox", username=session["user"]))
 
-    return render_template("edit_preferences.html", id=id)
 
 
 if __name__ == "__main__":
