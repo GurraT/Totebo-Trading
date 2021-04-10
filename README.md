@@ -206,7 +206,7 @@ ___________________
 - A requirement.txt file for running app.py was set up, writing following statement in the gitpod terminal "pip3 freeze --local > requirements.txt"
 - After setting up the requirement file a Procfile was constructing telling Heroku that app.py was used as the main file for running the website, this was done via running following command in the gitpod terminal "echo web: python app.py > Procfile"
 ### To be able to connect the MongoDB Atlas to Heroku following step was conducted
-- In the Heroku "Setting" the same information as in the env.py was set up
+- In the Heroku under "Setting" the same information as in the env.py was set up
 _____________________________
     os.environ.setdefault("IP", "0.0.0.0")
     os.environ.setdefault("PORT", "5000")
@@ -215,9 +215,63 @@ _____________________________
     os.environ.setdefault("MONGO_DBNAME", "totebo")
     ___________________________________
 
-#### Deploying code through Heroku was conducted through
+#### Deploying code through Heroku was conducted through by
 - First pushing code to github, wrtiting "git add -A", "git commit -m "messages" ", "git push" in the gitpod terminal
 - To connected the Github repository to Heroku, the deploy menu of the totebo app in Heroku was selected
-- Within the deployment menu the icon "connect to GitHUb" was selected followed by selecting the repository "totebo trading" and than chosing "main bransch" and select connect, follow by deploy bransch
-- To see if deployment work the icn view was pressed
+- Within the deployment menu the icon "connect to GitHUb" was selected followed by selecting the repository "totebo trading" and than chosing "main bransch" and select "connect", follow by deploy bransch
+- To see if the deployment work the icon "view" was pressed
+
+
+
+-----------
+## Credits
+
+### Image
+
+#### Stocks page
+- [Background image](static/img/pexels-pixabay-210600.jpg) was downloaded from [Pexel.com](https://www.pexels.com/photo/antique-bills-business-cash-210600/)
+
+
+#### Login / register / edit_stock page
+- [Background image](static/img/pexels-manuel-geissinger-325229.jpg) was downloaded from [Pexel.com]( https://www.pexels.com/photo/interior-of-office-building-325229)
+
+#### Profile / edit preferences / toolbox page
+- [Background image](static/img/pexels-skylar-kang-6368847.jpg) was downloaded from [Pexel.com](https://www.pexels.com/photo/calculator-and-pens-on-wooden-desk-6368847/)
+
+#### Add stocks page
+- [Background image](static/img/pexels-pixabay-47344.jpg) was downloaded from [Pexel.com]( https://www.pexels.com/photo/1-us-bank-note-47344/)
+
+### Deployment
+
+The website was developed using Gitpod for constructing code which then was pushed to GitHub which hosted my repository and then cloned and deployed in Heroku. I conducted following step to deploy my code.
+
+- Created a repository in GitHub called [Totebo Trading](https://github.com/GurraT/Totebo-Trading.git)
+- Open the repository in Gitpod
+- Downloaded the prerequisites such as Flask, os, pymongo and (dnspython)through the gitpod terminal
+- created a python-file for my code environment called env.py and a python file which was used for activating my homepage called app.py
+- within the env.py I sat up my code environment and the variables connecting to the MongoDB Atlas (see earlier section version control)
+- The env.py was than linked to my app.py file importing the environment
+- env.py was stored in gitiggnore
+- Same variables as in env.py was set up under my setting in my newly made app called totebo in  Heroku
+- Before connecting and pushing my GitHub repository to Heroku I constructed a requirement.txt file using the command “pip3 freeze – local > requirement.txt” in the gitpod terminal
+- Additionally I created a Procfile using the command “echo web: python app.py > Procfile” in the gitpod terminal
+- After setting up the prerequisite I pushed my code to GitHub and then navigated to deployment pages for my app totebo in Heroku
+- At the deployment site in Heroku I connected to Github, selected my repository and then selected main branch and press deploy bransch
+
+•	Port 5000, IP 0.0.0.0 and main branch was used for my deployment
+
+
+### Inspiration
+
+#### For my interactive part and dealing with the datahandling I got inspiration from course material at [Code institute](https://learn.codeinstitute.net/) and mainly the section Backend Development -miniproject for finding inspiration and knowledge about trading I looked at [Avanza]( https://www.avanza.se/start)
+
+### Acknowledgements
+
+- I am grateful for the feedback and constructive comments I got from my mentor Aaron Sinnott at Code Institute e.g. through helping me setting up a realistic schedule and give me inputs on my design and the functions within my application 
+#### I also want to thanks following people
+
+- Philip Magnusson, Carl-Johan Svenlin, Tobias Thomsson, Fredrik Thomsson for beta-testing my webpage and given me constructive feedback on the layout and function
+- The support I got through slack community from tutors and fellow students 
+
+
 
