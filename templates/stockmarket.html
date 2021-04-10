@@ -21,7 +21,9 @@
       <!-- Search field for stocks-->
       <div class="row">
         <div class="col s10 offset-s1 valign-wrapper">
-          <div class="searchfield col s12 m10 offset-m1 #eceff1 blue-grey lighten-5">
+          <div
+            class="searchfield col s12 m10 offset-m1 #eceff1 blue-grey lighten-5"
+          >
             <div class="input-field">
               <input
                 type="text"
@@ -31,7 +33,9 @@
                 class="validate"
                 required
               />
-              <label for="query"><i class="fas fa-search"></i> Search Stock Information </label>
+              <label for="query"
+                ><i class="fas fa-search"></i> Search Stock Information
+              </label>
             </div>
           </div>
         </div>
@@ -40,7 +44,7 @@
         <a
           href="{{url_for('get_stockinfo')}}"
           class="btn #b71c1c red darken-4 text-shadow"
-          >
+        >
           <i class="fas fa-undo-alt"></i> Reset</a
         >
         <button
@@ -63,27 +67,36 @@
         {% if stockinfo|length > 0 %} {% for stockinfo in stockinfo %}
         <tbody>
           <tr>
-            <td class="center-align">{{ stockinfo.Company_name}} <br><br><br><br> </td>
-            <td class="center-align">{{ stockinfo.Date}} <br><br><br><br> </td>
-            <td class="center-align">{{ stockinfo.Opening_price}} <br><br><br><br> </td>
-            <td class="center-align">{{ stockinfo.Closing_price}}  <br><br> 
+            <td class="center-align">
+              {{ stockinfo.Company_name}} <br /><br /><br /><br />
+            </td>
+            <td class="center-align">
+              {{ stockinfo.Date}} <br /><br /><br /><br />
+            </td>
+            <td class="center-align">
+              {{ stockinfo.Opening_price}} <br /><br /><br /><br />
+            </td>
+            <td class="center-align">
+              {{ stockinfo.Closing_price}} <br /><br />
               {% if session.user %}
               <a
-              href="{{url_for('edit_stock', stockid=stockinfo._id)}}"
-              class="btn-small #3e2723 brown darken-4 text-shadow"
-              ><i class="fas fa-cog"></i> Edit</a
-            >
-            <a
-              href="{{url_for('delete_stock', stockid=stockinfo._id)}}"
-              class="btn-small #b71c1c red darken-4 text-shadow"
-            >
-              <i class="fas fa-trash-alt"></i> Delete</a
-            >
-            {% else %}
-            <br><br> 
-            {% endif %}
-          </td>
+                href="{{url_for('edit_stock', stockid=stockinfo._id)}}"
+                class="btn-small #3e2723 brown darken-4 text-shadow"
+                ><i class="fas fa-cog"></i> Edit</a
+              >
+              <a
+                href="{{url_for('delete_stock', stockid=stockinfo._id)}}"
+                class="btn-small #b71c1c red darken-4 text-shadow"
+              >
+                <i class="fas fa-trash-alt"></i> Delete</a
+              >
+              {% else %}
+              <br /><br />
+              {% endif %}
+            </td>
+          </tr>
         </tbody>
+
         {% endfor %} {% else %}
         <div class="row">
           <div class="col s12 center-align">

@@ -1,174 +1,194 @@
 /* Basetemplate */
-body{
-    background-color: black;   
-   }
-   
-   header{
-       padding-bottom: 10px;
-   }
-   
-   .hamburger{
-       margin-top: 5px;
-       margin-right: 10px;
-   }
-   
-   .logo{
-       font-size:28px;
-       margin-left: 60px;
-   }
-   
-   .login{
-       margin-right: 80px;
-   }
-   
-   .nav-content ul{
-    margin-left: 60px;
-   }
-   
-   .omxwrap{
-       margin-left: 60px;
-   }
-    
-   
-   .card{
-       border:#545760 2px solid;
-       opacity: 80%;
-   }
-   .leftpanel{
-       margin-top: 60px;
-   }
-   
-   .rightpanel{
-       margin-top: 60px;
-   }
-   
-   .bottompanel{
-       margin-top: 0px;
-   }
-   
-   form{
-       margin-top: 30px;
-       margin-bottom: 30px;
-   }
-   
-   /*Register page*/
-   
-   .linktext{
-       color:#cccbda;
-       text-shadow: #010101 1px 1px;
-   }
-   
-   .linktext a{
-       color:#c1be5f;
-   }
-   
-   
-   .registerpage{
-       background-image:url("../img/pexels-manuel-geissinger-325229.jpg");
-       background-size: 100% 100%;
-       background-position: center;
-       background-repeat: no-repeat; 
-   }
-   
-   .registerform, .loginform{
-       margin-top: 40px;
-       margin-bottom: 40px;
-   }
-   
-   /*Profile page*/
-   
-   .profilepage{
-       background-image:url("../img/pexels-skylar-kang-6368847.jpg");
-       background-size: 100% 100%;
-       background-position: center;
-       background-repeat: no-repeat;
-       margin-bottom: 50px;
-   }
-   
-   .profilemessage{
-       opacity: 80%;
-       border: gainsboro 3px solid; 
-   }
-   .searchbox{
-       border: black 3px solid;
-   }
-   
-   .profileform{
-       opacity: 80%;
-       border: gray 6px solid;
-       margin-top: 40px;
-   }
-   
-   .profilewrapping{
-       margin-top: 40px; 
-   }
-   .notification{
-        margin-bottom: 60px; 
-   
-   }
-   
-   .send_info{
-        margin-bottom: 60px; 
-   }
-   
-   /*Stockmarket page*/
-   .nomatch{
-       font-size: 48px;
-   }
-   
-   .stockmessage{
-       opacity: 80%;
-       border: gainsboro 3px solid; 
-   }
-   
-   .stockpage{
-       background-image:url("../img/pexels-pixabay-210600.jpg");
-       background-size: 100% 100%;
-       background-position: center;
-       background-repeat: no-repeat;
-       margin-bottom: 50px;
-   }
-   
-   .stockwrapp{
-      margin-bottom: 20px;
-       margin-top: 10px;
-   
-   }
-   
-   /*Toolbox page*/
-   .selection{
-      border: black 3px solid; 
-   }
-   
-   /*Add stock page*/
-   .addpage{
-       background-image:url("../img/pexels-pixabay-47344.jpg");
-       background-size: 100% 100%;
-       background-position: center;
-       background-repeat: no-repeat; 
-   }
-   
-   @media screen and (max-width: 1000px) {
-   
-    .logo{
-        font-size:12px;
-        margin-left: 60px;
-    }
-    
-    .buttom-large{
-        display:none;
-    }
-   
-   .login{
-       margin-right: 0px;
-   }
 
-    .nav-content ul{
-        margin-left: 10px;
-    }
+
+body {
+	background-color: black;
+}
+
+header {
+	padding-bottom: 10px;
+}
+
+.hamburger {
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
+.logo {
+	font-size: 28px;
+	margin-left: 60px;
+}
+
+.login {
+	margin-right: 80px;
+}
+
+.nav-content ul {
+	margin-left: 60px;
+}
+
+.omxwrap {
+	margin-left: 60px;
+}
+
+.card {
+	border: #545760 2px solid;
+	opacity: 80%;
+}
+
+.leftpanel {
+	margin-top: 60px;
+}
+
+.rightpanel {
+	margin-top: 60px;
+}
+
+.bottompanel {
+	margin-top: 0px;
+}
+
+form {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
    
-   .linktext{
-       font-size: 14px;
-   }
    
-   }
+
+/*Register page*/
+
+
+   
+   .linktext {
+	color: #cccbda;
+	text-shadow: #010101 1px 1px;
+}
+
+.linktext a {
+	color: #c1be5f;
+}
+
+.registerpage {
+	background-image: url("../img/pexels-manuel-geissinger-325229.jpg");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.registerform, .loginform {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+   
+   
+
+/*Profile page*/
+
+
+   
+   .profilepage {
+	background-image: url("../img/pexels-skylar-kang-6368847.jpg");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-bottom: 50px;
+}
+
+.profilemessage {
+	opacity: 80%;
+	border: gainsboro 3px solid;
+}
+
+.searchbox {
+	border: black 3px solid;
+}
+
+.profileform {
+	opacity: 80%;
+	border: gray 6px solid;
+	margin-top: 40px;
+}
+
+.profilewrapping {
+	margin-top: 40px;
+}
+
+.notification {
+	margin-bottom: 60px;
+}
+
+.send_info {
+	margin-bottom: 60px;
+}
+   
+   
+
+/*Stockmarket page*/
+
+
+   .nomatch {
+	font-size: 48px;
+}
+
+.stockmessage {
+	opacity: 80%;
+	border: gainsboro 3px solid;
+}
+
+.stockpage {
+	background-image: url("../img/pexels-pixabay-210600.jpg");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-bottom: 50px;
+}
+
+.stockwrapp {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+   
+   
+
+/*Toolbox page*/
+
+
+   .selection {
+	border: black 3px solid;
+}
+   
+   
+
+/*Add stock page*/
+
+
+   .addpage {
+	background-image: url("../img/pexels-pixabay-47344.jpg");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1000px) {
+   
+	.logo {
+		font-size: 12px;
+		margin-left: 60px;
+	}
+
+	.buttom-large {
+		display: none;
+	}
+
+	.login {
+		margin-right: 0px;
+	}
+
+	.nav-content ul {
+		margin-left: 10px;
+	}
+
+	.linktext {
+		font-size: 14px;
+	}
+}

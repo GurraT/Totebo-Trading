@@ -1,5 +1,7 @@
 import os
-from flask import Flask, flash, render_template, redirect, request, session, url_for
+from flask import (
+    Flask, flash, render_template, redirect, 
+    request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -41,7 +43,8 @@ def register():
 
         if existing_user:
             flash(
-                "'{}' already exists in the system".format(request.form.get("username"))
+                "'{}' already exists in the system".format(
+                    request.form.get("username"))
             )
             return redirect(url_for("register"))
 
@@ -97,13 +100,17 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # select session user's username from db
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    email = mongo.db.users.find_one({"username": session["user"]})["email"]
-    phone = mongo.db.users.find_one({"username": session["user"]})["telephone"]
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+    phone = mongo.db.users.find_one(
+        {"username": session["user"]})["telephone"]
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username, email=email, phone=phone
+            "profile.html", username=username, 
+            email=email, phone=phone
         )
 
     return redirect(url_for("login"))
@@ -136,9 +143,12 @@ def preference():
         }
         mongo.db.categories.insert_one(preference)
         session["name"] = request.form.get("name")
-        return redirect(url_for("toolbox", username=session["user"],name=session["name"] ))
+        return redirect(
+            url_for("toolbox", username=session["user"], name=session["name"])
+        )
 
     return render_template("profile.html", username=username)
+
 
 @app.route("/add_info", methods=["GET", "POST"])
 def add_stock():
@@ -201,14 +211,17 @@ def logout():
 
 @app.route("/toolbox/<username>", methods=["GET", "POST"])
 def toolbox(username):
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    name = mongo.db.categories.find({"name": session["name"]})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    name = mongo.db.categories.find(
+        {"name": session["name"]})
     stockinfo = list(mongo.db.stockinfo.find())
-    
+
     if session["name"]:
         return render_template("toolbox.html", name=name, stockinfo=stockinfo)
 
     return render_template("profile.html")
+
 
 @app.route("/delete_preferences/<task>", methods=["GET", "POST"])
 def delete_preferences(task):
@@ -216,7 +229,6 @@ def delete_preferences(task):
     mongo.db.categories.remove({"_id": ObjectId(task)})
     flash("Preferences removed!")
     return redirect(url_for("toolbox", username=session["user"]))
-
 
 
 if __name__ == "__main__":
