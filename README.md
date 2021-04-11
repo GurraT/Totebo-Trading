@@ -1,6 +1,6 @@
 # Tecbo Tradelys
 
-![Mockup](assets/wireframe/mockup.png "Typography EcoTurningPoint")
+![Mockup](static/documentation/mockup.png "Mockup Tecbo Tradelys")
 
 #### The aim of this website is to offer platform where users can add, post and analyse stocks. As a first step users will be able to post their of observations and set strategies to tailor made report for analysing stockmarket data. The longterm goal is to include realtime data and offer the possibility for users to build their of engine for analysing these data. The code for this project is found [here]( https://totebo.herokuapp.com/ "Link to Tecbo Tradelys deployed homepage")
 
@@ -53,7 +53,7 @@
 ### Design Choices
 
 #### Typology
-![Typology](assets/wireframe/typology.jpg "Typography EcoTurningPoint")
+![Typology](static/documentation/RouteStructure.jpg "Typography EcoTurningPoint")
 
 #### Fonts 
 I used following font for my project 
@@ -64,7 +64,7 @@ I used following font for my project
 - I focused mainly on black,white, gray colortheme to create a clear, simple and easy to read webpage,  the aim is that backgroundimage should draw attention and signal a strong messages that this site is focusing on trade and data extraction
 
 #### Wireframe
-[Wireframe](assets/wireframe/Ecoturningpoint.pdf "Wireframe EcoTurningPoint")
+[Wireframe](static/documentation/totebo.pdf "Wireframe Tecbo")
 
 
 ## Technologies Used
@@ -75,6 +75,8 @@ I used following font for my project
   - Used as the main mark-up language for the website content.
 - CSS3
   - Used to style the individual webpages.
+- Python
+  - Used for setting up environment and conditions for running the application
 - Javascript
   -  Used for collecting connecting activate functions within
 materializecss components such as dropdown-picker and datepicker for calender function 
@@ -226,6 +228,40 @@ _____________________________
 ### Manual testing
 - [Protocol/Manual testing](assets/Documentation/manualtesting.pdf "Manual Testing")
 
+### Automated testing of index page
+- [W3C Html validation](static/documentation/html_validation_basetemplate.png "Html Testing of index page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_basetemplate.png "Test index page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_basetemplate.png "Test index page on mobile devices through Lighthouse")
+
+### Automated testing of login page
+- [W3C Html validation](static/documentation/html_validation_login.png "Html Testing of login page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_login.png "Test login page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_login.png "Test login page on mobile devices through Lighthouse")
+
+### Automated testing of register page
+- [W3C Html validation](static/documentation/html_validation_register.png "Html Testing of register page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_register.png "Test register page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_register.png "Test register page on mobile devices through Lighthouse")
+
+### Automated testing of profile page
+- [W3C Html validation](static/documentation/html_validation_profile.png "Html Testing of profile page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_profile.png "Test profile page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_profile.png "Test profile page on mobile devices through Lighthouse")
+
+### Automated testing of message page
+- [W3C Html validation](static/documentation/html_validation_toolbox.png "Html Testing of message page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_message.png "Test message page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_message.png "Test message page on mobile devices through Lighthouse")
+
+### Automated testing of stockmarket page
+- [W3C Html validation](static/documentation/html_validation_stockmarket.png "Html Testing of stockmarket page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_stockmarket.png "Test stockmarket page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_stockmarket.png "Test stockmarket page on mobile devices through Lighthouse")
+
+### Automated testing of add_info page
+- [W3C Html validation](static/documentation/html_validation_editstock.png "Html Testing of add_info page")
+- [Result from lighthouse for large device](static/documentation/lighthouse_ld_add_info.png "Test add_info page on computer through Lighthouse")
+- [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_add_info.png "Test stockmarket page on mobile devices through Lighthouse")
 
 -----------
 ## Credits
@@ -275,7 +311,7 @@ The website was developed using Gitpod for constructing code which then was push
 #### I also want to thanks following people
 
 - Philip Magnusson, Carl-Johan Svenlin, Tobias Thomsson, Fredrik Thomsson for beta-testing my webpage and given me constructive feedback on the layout and function
-- The support I got through slack community from tutors and fellow students 
+- The support I got through slack community from tutors and fellow students, I specially want to thank Igor, Tim, Alan and Sheryl tutor me in times of need 
 
 
 
