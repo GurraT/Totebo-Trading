@@ -99,6 +99,12 @@ form {
 	border: gainsboro 3px solid;
 }
 
+.Profiletext{
+	font-size: 22px;
+	border-bottom: gainsboro 3px solid;
+	border-top: gainsboro 3px solid;
+}
+
 .searchbox {
 	border: black 3px solid;
 }
@@ -190,5 +196,8 @@ form {
 
 	.linktext {
 		font-size: 14px;
+	}
+	.Profiletext{
+		font-size: 18px;
 	}
 }

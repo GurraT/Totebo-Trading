@@ -118,117 +118,128 @@ def profile(username):
 
 @app.route("/preference", methods=["GET", "POST"])
 def preference():
-    if request.method == "POST":
-        # insert user preferences in to category collection in db
-        RSI = "on" if request.form.get("RSI") else "off"
-        MACD = "on" if request.form.get("MACD") else "off"
-        Trend = "on" if request.form.get("Trend") else "off"
-        EMA = "on" if request.form.get("EMA") else "off"
-        Bollinger = "on" if request.form.get("Bollinger") else "off"
-        SMA = "on" if request.form.get("SMA") else "off"
-        info_phone = "on" if request.form.get("info_phone") else "off"
-        info_mail = "on" if request.form.get("info_mail") else "off"
-        preference = {
-            "name": request.form.get("name"),
-            "Email": request.form.get("Email"),
-            "phone": request.form.get("phone"),
-            "RSI": RSI,
-            "MACD": MACD,
-            "Trend": Trend,
-            "EMA": EMA,
-            "Bollinger": Bollinger,
-            "SMA": SMA,
-            "info_phone": info_phone,
-            "info_mail": info_mail,
-        }
-        mongo.db.categories.insert_one(preference)
-        session["name"] = request.form.get("name")
-        return redirect(
-            url_for("toolbox", username=session["user"], name=session["name"])
-        )
+    if "user" in session:
+        if request.method == "POST":
+            # insert user preferences in to category collection in db
+            RSI = "on" if request.form.get("RSI") else "off"
+            MACD = "on" if request.form.get("MACD") else "off"
+            Trend = "on" if request.form.get("Trend") else "off"
+            EMA = "on" if request.form.get("EMA") else "off"
+            Bollinger = "on" if request.form.get("Bollinger") else "off"
+            SMA = "on" if request.form.get("SMA") else "off"
+            info_phone = "on" if request.form.get("info_phone") else "off"
+            info_mail = "on" if request.form.get("info_mail") else "off"
+            preference = {
+                "name": request.form.get("name"),
+                "Email": request.form.get("Email"),
+                "phone": request.form.get("phone"),
+                "RSI": RSI,
+                "MACD": MACD,
+                "Trend": Trend,
+                "EMA": EMA,
+                "Bollinger": Bollinger,
+                "SMA": SMA,
+                "info_phone": info_phone,
+                "info_mail": info_mail,
+            }
+            mongo.db.categories.insert_one(preference)
+            session["name"] = request.form.get("name")
+            return redirect(
+                url_for("toolbox", username=session["user"], name=session["name"])
+            )
 
-    return render_template("profile.html", username=username)
+        return render_template("profile.html", username=session["user"])
+    return redirect(url_for("login"))
 
 
 @app.route("/add_info", methods=["GET", "POST"])
 def add_stock():
-    if request.method == "POST":
-        # insert info to stockinfo collection in db
-        info = {
-            "Company_name": request.form.get("company_name"),
-            "Company_abbr": request.form.get("company_abbr"),
-            "Date": request.form.get("date"),
-            "Vol": request.form.get("volume"),
-            "Opening_price": request.form.get("price_open"),
-            "Closing_price": request.form.get("price_close"),
-            "Daily_High": request.form.get("price_high"),
-            "Daily_Low": request.form.get("price_low"),
-        }
-        mongo.db.stockinfo.insert_one(info)
-        flash("Information added!")
-        return redirect(url_for("get_stockinfo"))
+        if "user" in session:
+            if request.method == "POST":
+                # insert info to stockinfo collection in db
+                info = {
+                    "Company_name": request.form.get("company_name"),
+                    "Company_abbr": request.form.get("company_abbr"),
+                    "Date": request.form.get("date"),
+                    "Vol": request.form.get("volume"),
+                    "Opening_price": request.form.get("price_open"),
+                    "Closing_price": request.form.get("price_close"),
+                    "Daily_High": request.form.get("price_high"),
+                    "Daily_Low": request.form.get("price_low")
+                    }
+                mongo.db.stockinfo.insert_one(info)
+                flash("Information added!")
+                return redirect(url_for("get_stockinfo"))
 
-    return render_template("add_stock.html")
+            return render_template("add_stock.html")
+        return redirect(url_for("login"))
 
 
 @app.route("/edit_stock/<stockid>", methods=["GET", "POST"])
 def edit_stock(stockid):
-    if request.method == "POST":
-        # insert info to stockinfo collection in db
-        info = {
-            "Company_name": request.form.get("company_name"),
-            "Company_abbr": request.form.get("company_abbr"),
-            "Date": request.form.get("date"),
-            "Vol": request.form.get("volume"),
-            "Opening_price": request.form.get("price_open"),
-            "Closing_price": request.form.get("price_close"),
-            "Daily_High": request.form.get("price_high"),
-            "Daily_Low": request.form.get("price_low"),
-        }
-        mongo.db.stockinfo.update({"_id": ObjectId(stockid)}, info)
-        flash("Information updated!")
-        return redirect(url_for("get_stockinfo"))
+    if "user" in session:
+        if request.method == "POST":
+            # insert info to stockinfo collection in db
+            info = {
+                "Company_name": request.form.get("company_name"),
+                "Company_abbr": request.form.get("company_abbr"),
+                "Date": request.form.get("date"),
+                "Vol": request.form.get("volume"),
+                "Opening_price": request.form.get("price_open"),
+                "Closing_price": request.form.get("price_close"),
+                "Daily_High": request.form.get("price_high"),
+                "Daily_Low": request.form.get("price_low")
+            }
+            mongo.db.stockinfo.update({"_id": ObjectId(stockid)}, info)
+            flash("Information updated!")
+            return redirect(url_for("get_stockinfo"))
 
-    stockid = mongo.db.stockinfo.find_one({"_id": ObjectId(stockid)})
-    return render_template("edit_stock.html", stockid=stockid)
+        stockid = mongo.db.stockinfo.find_one({"_id": ObjectId(stockid)})
+        return render_template("edit_stock.html", stockid=stockid)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/delete_stock/<stockid>", methods=["GET", "POST"])
 def delete_stock(stockid):
-    # delete info from stockinfo collection in db
-    mongo.db.stockinfo.remove({"_id": ObjectId(stockid)})
-    flash("Information removed!")
-    return redirect(url_for("get_stockinfo"))
+        if "user" in session:
+            # delete info from stockinfo collection in db
+            mongo.db.stockinfo.remove({"_id": ObjectId(stockid)})
+            flash("Information removed!")
+            return redirect(url_for("get_stockinfo"))
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
 # logout and remove session cookies
 def logout():
     flash("You have been logout")
-    session.pop("user")
+    session.clear()
     return redirect(url_for("login"))
 
 
-@app.route("/toolbox/<username>", methods=["GET", "POST"])
-def toolbox(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    name = mongo.db.categories.find(
-        {"name": session["name"]})
-    stockinfo = list(mongo.db.stockinfo.find())
+@app.route("/toolbox", methods=["GET", "POST"])
+def toolbox():
+    if "user" in session:
+        uname = mongo.db.categories.find(
+            {"name": session["user"]})
+        stockinfo = list(mongo.db.stockinfo.find())
+        if mongo.db.categories.count_documents({"name": session["user"]}, limit=1) > 0:
+            return render_template("toolbox.html", stockinfo=stockinfo, uname=uname)
+        return redirect(url_for("profile", username=session["user"]))
 
-    if session["name"]:
-        return render_template("toolbox.html", name=name, stockinfo=stockinfo)
-
-    return render_template("profile.html")
+    return redirect(url_for("login"))
 
 
 @app.route("/delete_preferences/<task>", methods=["GET", "POST"])
 def delete_preferences(task):
-    # delete preferences in categories collection in db
-    mongo.db.categories.remove({"_id": ObjectId(task)})
-    flash("Preferences removed!")
-    return redirect(url_for("toolbox", username=session["user"]))
+    if "user" in session:
+        # delete preferences in categories collection in db
+        mongo.db.categories.remove({"_id": ObjectId(task)})
+        flash("Preferences removed!")
+        return redirect(url_for("toolbox", username=session["user"]))
+        
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
