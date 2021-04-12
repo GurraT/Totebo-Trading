@@ -312,5 +312,3 @@ The website was developed using Gitpod for constructing code which then was push
 
 - Philip Magnusson, Carl-Johan Svenlin, Tobias Thomsson, Fredrik Thomsson for beta-testing my webpage and given me constructive feedback on the layout and function
 - The support I got through slack community from tutors and fellow students, I specially want to thank Igor, Tim, Alan and Sheryl tutor me in times of need 
-
-
