@@ -12,7 +12,7 @@
 
 ### Project Goal
 
-#### The goal of this project is to build an interactive and responsive website allowing users to store and collect stock market data. Additionally, users will be able to store and suggest parameters they want to include in their trading strategy and post this to database used for tailor making analysis for the user. 
+#### The goal of this project is to build an interactive and responsive website allowing users to store and collect stock market data. Additionally, users will be able to store and suggest parameters they want to include in their trading strategy and post this to a database used for tailor making analysis for the user. 
 
 
 #### The features on the website will:
@@ -53,11 +53,10 @@
 ### Design Choices
 
 #### Typology
-![Typology](static/documentation/RouteStructure.png "Typography Tecbo Tradelys")
+![Typology](static/documentation/RouteStructure.png ,"Typography Tecbo Tradelys")
 
 #### Fonts 
-I used following font for my project 
-- I used standards fonts and fonts connected [materializecss templates]( https://materializecss.com/ “materializecss”) to have a predictive behaviour of my font over several web browsers
+- I used standards fonts and fonts connected [materializecss templates]( https://materializecss.com/ ) to have a predictive behaviour of my font over several web browsers
 
 #### Colors
 
@@ -141,7 +140,7 @@ materializecss components such as dropdown-picker and date picker for calendar f
 - User friendly with balanced use of image addressing the core message with the web pages 
 - A Navbar with easy navigation that collapses on mobile displays
 - Footer with an about section, a fact section about stocks and why to register  
-- A open part of the site where non-user can find information about stock stored in the database to draw attention to the webpages
+- An open part of the site where non-user can find information about stock stored in the database to draw attention to the webpages
 - A Register function and a Login page which allow user to enter the member page
 - A member section of the web pages which allow user to set up trading strategies, extracting, reading, editing and storing data connected to strategies and specific stocks
 
@@ -157,7 +156,7 @@ materializecss components such as dropdown-picker and date picker for calendar f
 ### Version control for this repository is managed within GitHub and Gitpod using main as main branch for the project
 
 - To start with a New Repository was created in GitHub, named [Totebo Trading](https://github.com/GurraT/Totebo-Trading.git)
-- Totebo Trading was than linked to Gitpod pressing the green button Gitpod in the newly created Repository
+- Totebo Trading was additionally linked to Gitpod pressing the green button Gitpod in the newly created Repository
 - Gitpod was then used as an editor for creating the code in this project
 
 ### Setting up MongoDB Atlas was done in agreement with following step
@@ -226,7 +225,9 @@ _____________________________
 - I conducted manual testing and used Lighthouse, google inspection tool, W3C validator(Html/CSS), JsHint (JavaScript)and PEP8 online checker(python) for automated validation see results below
 
 ### Manual testing
-- [Protocol/Manual testing](assets/Documentation/Manualtesting.pdf "Manual Testing")
+- [Protocol/Manual testing](static/documentation/Manualtesting.pdf "Manual Testing")
+
+*Manual test has been tried through forcing code to break as well as testing that right code works, e.g. adding condition that is not allowed in forms input and making sure that the validation notice this, further more all pages has been troughly tested by clicking on all functions and making sure the routing and commands work as they should
 
 ### Automated testing of index page
 - [W3C Html validation](static/documentation/html_validation_basetemplate.png "Html Testing of index page")
@@ -262,6 +263,28 @@ _____________________________
 - [W3C Html validation](static/documentation/html_validation_editstock.png "Html Testing of add_info page")
 - [Result from lighthouse for large device](static/documentation/lighthouse_ld_add_info.png "Test add_info page on computer through Lighthouse")
 - [Result from lighthouse for mobile device](static/documentation/lighthouse_mob_add_info.png "Test stock market page on mobile devices through Lighthouse")
+
+### Fixed Bugs
+
+- Encounter problem with routing in def toolbox when argument name in colletion categories not found, this was fixed with help from tutors at code institutet through adding following code 
+
+___
+    if mongo.db.categories.count_documents({"name": session["user"]}, limit=1) > 0:
+            return render_template("toolbox.html", stockinfo=stockinfo, uname=uname)
+        return redirect(url_for("profile", username=session["user"]))
+  ____
+
+  - Had a backdoor open for user that was not member yet to the member section of the web page, this was fixed by adding follow condition to urls for member section 
+
+  ___
+    if "user" in session:
+
+### Know bugs
+- Contrast between mainsection background and text can be further optimized but acceptable as it is at the moment
+- Some of the image affects the prestanda and could be changed for next version
+
+
+
 
 -----------
 ## Credits
